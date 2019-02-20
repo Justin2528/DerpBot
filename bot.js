@@ -39,6 +39,9 @@ bot.on("message", async message => {
   let cmd  = messageArray[0];
   let args = messageArray.slice(1);
   
+    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+    if(commandfile) commandFile.run(bot,message,args); 
+    
   if(cmd ===`${prefix}test`){
     message.channel.send("Omg it work i cri omg ded not big surprise");
   }
