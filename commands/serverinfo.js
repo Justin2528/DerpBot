@@ -20,7 +20,6 @@ module.exports.config = {
   name: "serverinfo",
   aliases: ["si", "serverdesc"],
   description: "Server Info",
-  noalias: "No Aliases",
   usage: "derp>serverinfo",
   accessableby: "Members"
 
