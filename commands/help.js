@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands:`, "``serverinfo`` `help` `test`")
+    .addField(`Commands:`, "``serverinfo`` `help` `test2`")
     .setFooter("DerpBot v0.3.9", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
     message.author.send(Sembed);
