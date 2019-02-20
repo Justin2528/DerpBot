@@ -9,7 +9,8 @@ module.exports.config = {
 module.exports.config = {
   name: "help",
   aliases: [""],
-  description "",
+  description: "",
+  usage: "",
   noalias: "No Aliases",
   accessableby: "Members"
 }
