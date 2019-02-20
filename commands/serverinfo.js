@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("**Guild Name:**", `${message.guild.name}`, true)
   .addField("**Guild Owner:**", `${message.guild.owner}`, true)
   .addField("**Member Count:**", `${message.guild.memberCount}`, true)
-  .AddField("**Role Count**", `${message.guild.roles.size}`, true)
+  .addField("**Role Count**", `${message.guild.roles.size}`, true)
   .setFooter(`DerpBot | Footer`, bot.user.displayAvatarURL)
   message.channel.send(sEmbed)
   
