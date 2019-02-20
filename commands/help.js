@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
       var SHembed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(`DerpBot Help`, message.guild.iconURL)
-      .setDescription(`The bot prefix is: ${prefix}\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || **No Description**}\n**Usage:** ${command.config.usage || **No Usage**}\n **Accessable by:** ${command.config.accessableby || **Members**}\n**Aliases:** ${command.config.noalias} || ${command.config.aliases}`)
+      .setDescription(`The bot prefix is: ${prefix}\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n **Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias} || ${command.config.aliases}`)
     }}
    
   if(!args[0]){
