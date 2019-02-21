@@ -1,4 +1,4 @@
-const reqEvent = (event) => require(`..events/${event}`)
+const reqEvent = (event) => require(`../events/${event}`)
 
 module.exports =  bot => {  
 
