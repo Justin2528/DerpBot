@@ -3,9 +3,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 require("./util/eventHandler")(bot);
 
-bot.on("ready", async () => {
-    bot.user.setActivity("derp>help - DerpBot");
-})
 
 const fs = require("fs");
 bot.commands = new Discord.Collection();
@@ -37,7 +34,7 @@ bot.on("message", async message => {
   
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ")
-  let cmd  = messageArray[0];
+  let cmd  = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
   
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
