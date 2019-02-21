@@ -1,6 +1,7 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
+require("./util/eventHandler")(bot);
 
 bot.on("ready", async () => {
     bot.user.setActivity("derp>help - DerpBot");
