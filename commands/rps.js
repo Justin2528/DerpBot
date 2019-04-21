@@ -65,7 +65,7 @@ module.exports.config = {
   name: "rps",
   aliases: ["Game"],
   description: "Play Rock Paper scissors",
-  usage: "derp>rps (r/rock/p/paper/s/scissors)",
+  usage: "d>rps (r/rock/p/paper/s/scissors)",
   noalias: "No Aliases",
   accessableby: "Members"
 }
