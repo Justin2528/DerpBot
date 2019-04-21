@@ -22,7 +22,7 @@ module.exports.config = {
   name: "test2",
   aliases: ["test"],
   description: "Testing",
-  usage: "derp>test2",
+  usage: "d>test2",
   noalias: "No Aliases",
   accessableby: "Members"
 }
