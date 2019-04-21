@@ -5,7 +5,7 @@ module.exports = bot => {
    
    
       let statuses = [
-         `derp>help - DerpBot`,
+         `d>help - DerpBot`,
          `Partner of EDGE! - DerpBot`,
          `DerpBot version: v0.3.9 - DerpBot`
       ]
