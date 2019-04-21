@@ -6,12 +6,11 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.config = {
-module.exports.config = {
-  name: "help",
+  name: "",
   aliases: [""],
   description: "",
   usage: "",
   noalias: "No Aliases",
   accessableby: "Members"
 }
-}
+
