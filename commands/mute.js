@@ -53,9 +53,9 @@ mutee.addRole(muterole.id).then(() => {
 
 module.exports.config = {
   name: "mute",
-  aliases: ["m","nospeak"]
+  aliases: ["m","nospeak"],
   description: "Mutes some bad boi",
-  usage: "d>mute <@user> <reason>",
+  usage: "derp>mute <@user> <reason>",
   noalias: "No Aliases",
   accessableby: "Members"
 }
