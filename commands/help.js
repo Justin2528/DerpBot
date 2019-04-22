@@ -36,13 +36,14 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(embed).then(m => m.delete(10000));
     message.author.send(Sembed);
   }
-}
    if(args[0] == "justin"){
     let boi = new Discord.RichEmbed()
     .setColor("red")
     .setFooter("Psst! You found a secret command! `cool`")
   message.author.send(boi);
    }
+
+}
 
 
 
