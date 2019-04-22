@@ -68,5 +68,5 @@ module.exports.config = {
   description: "Mutes some bad boi",
   usage: "d>mute <@user> <reason> <TIME!>",
   noalias: "No Aliases",
-  accessableby: "Members"
+  accessableby: "Staff"
 }
