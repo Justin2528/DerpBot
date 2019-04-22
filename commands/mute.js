@@ -7,7 +7,7 @@ if(!message.member.hasPermission("MANAGE_MESSAGES") || !message.guild.owner) ret
   if(!message.guild.me.hasPermissions(["MANAGE_MESSAGES", "ADMINISTRATOR"])) return message.channel.send("ERROR: 500 (No perms `MANAGE_MESSAGES`)");
   let mutee = message.mentions.members.first() || message.guild.members.get(args[0]);
   if(!mutee) return message.reply("Please supply a bad boi to be muted!");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
+  if(mutee.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
   
   let reason = args.slice(1).join(" ");
   if(!reason) reason = "No reason given..."
