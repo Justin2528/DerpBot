@@ -40,7 +40,7 @@ if(!message.member.hasPermission("MANAGE_MESSAGES") || !message.guild.owner) ret
  let mutetime = args[1];
   if(!mutetime) return message.reply("You didn't specify a time!");
   
-  await(mutee.addRole(mutee.id));
+  await(mutee.addRole(muterole.id));
   message.reply(`<@${mutee.id}> has been muted for ${ms(ms(mutetime))}`);
  mutee.send(`Hello, you have been muted by ${message.author.username} in ${message.guild.name} for ${ms(ms(mutetime))}. || R E A S O N: ${reason}`)
   
