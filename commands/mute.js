@@ -42,7 +42,9 @@ mutee.addRole(muterole.id).then(() => {
   
 })
   
- message.channel.send("Also no mod logs.")
+let ok = new Discord.RichEmbed()
+.setColor("GREEN")
+.setFooter("Beta version of this bot don't have mod logs... sorry...")
   
   
 
