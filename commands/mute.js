@@ -53,7 +53,7 @@ message.channel.send(ok);
 
 
   setTimeout(function(){
-    tomute.removeRole(muterole.id);
+    mutee.removeRole(muterole.id);
     message.channel.send(`<@${mutee.id}> has been unmuted!`);
   }, ms(mutetime));
 
