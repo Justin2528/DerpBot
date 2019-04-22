@@ -14,6 +14,8 @@ module.exports.run = async (bot, message, args) => {
       .setColor("RANDOM")
       .setAuthor(`DerpBot Help`, message.guild.iconURL)
       .setDescription(`The bot prefix is: ${prefix}\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n **Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
+     .setFooter("DerpBot v1.0", bot.user.displayAvatarURL)
+    
       message.channel.send(SHembed)
       }}
    
@@ -32,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps`, `mute`")
-    .setFooter("DerpBot v1.0", bot.user.displayAvatarURL)
+        .setFooter("DerpBot v1.0", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
     message.author.send(Sembed);
   }
