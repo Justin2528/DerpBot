@@ -3,58 +3,38 @@ const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
 
-if(!message.member.hasPermission("MANAGE_MESSAGES") || !message.guild.owner) return message.channel.send("Invalid Permission. (Hello there! you need Manage Messages permission to mute people!)");
-  if(!message.guild.me.hasPermissions(["MANAGE_MESSAGES", "ADMINISTRATOR"])) return message.channel.send("ERROR: 500 (No perms `MANAGE_MESSAGES`)");
-  let mutee = message.mentions.members.first() || message.guild.members.get(args[0]);
-  if(!mutee) return message.reply("Please supply a bad boi to be muted!");
-  if(mutee.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
-  
-  let reason = args.slice(1).join(" ");
-  if(!reason) reason = "No reason given..."
-  
-  let muterole = message.guild.roles.find(r => r.name === "Muted")
+  let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!tomute) return message.reply("Couldn't find user.");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
+  let muterole = message.guild.roles.find(`name`, "muted");
+  //start of create role
   if(!muterole){
-  
     try{
       muterole = await message.guild.createRole({
-        name: "Muted",
-        color: "#ff0000",
-        permissions: []
+        name: "muted",
+        color: "#000000",
+        permissions:[]
       })
-      
       message.guild.channels.forEach(async (channel, id) => {
         await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
-           ADD_REACTIONS: false,
-           SEND_TTS_MESSAGES: false,
-          ATTACH_FILES: false,
-          SPEAK: false
-        })
-      })
-    } catch(e) {
-  console.log(e.stack);
-}
-  
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false
+        });
+      });
+    }catch(e){
+      console.log(e.stack);
+    }
   }
-
- let mutetime = args[1];
+  //end of create role
+  let mutetime = args[1];
   if(!mutetime) return message.reply("You didn't specify a time!");
-  
-  await(mutee.addRole(muterole.id));
-  message.reply(`<@${mutee.id}> has been muted for ${ms(ms(mutetime))}`);
- mutee.send(`Hello, you have been muted by ${message.author.username} in ${message.guild.name} for ${ms(ms(mutetime))}. || R E A S O N: ${reason}`)
-  
-let ok = new Discord.RichEmbed()
-.setColor("GREEN")
-.setFooter("Beta version of this bot don't have mod logs... sorry...")
-  
-message.channel.send(ok);
-  
 
+  await(tomute.addRole(muterole.id));
+  message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
 
   setTimeout(function(){
-    mutee.removeRole(muterole.id);
-    message.channel.send(`<@${mutee.id}> has been unmuted!`);
+    tomute.removeRole(muterole.id);
+    message.channel.send(`<@${tomute.id}> has been unmuted!`);
   }, ms(mutetime));
 
   
