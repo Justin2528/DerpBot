@@ -11,6 +11,6 @@ module.exports.config = {
   description: "",
   usage: "",
   noalias: "No Aliases",
-  accessableby: "Members"
+  accessableby: ""
 }
 
