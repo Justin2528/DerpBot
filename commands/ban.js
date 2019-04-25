@@ -3,10 +3,14 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 message.delete()
   if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.reply(`||ERROR REPORT: ${message.author.username} HAVE NO BAN_MEMBERS PERMS.||`);
-  
+     
+
+
   let bane = message.mentions.members.first() || message.guild.members.get(args[0]);
   
   if(!bane) return message.reply(`Oh no! where is da bad boi? (if you don't understand, do d>help ban...)`);
+
+ if(bane.hasPermission("BAN_MEMBERS")) return message.channel.send("That boi got perms... ");
   
   let reason = args.slice(1).join(" ");
   if(!reason) reason = "N̝̜̦̳̽͂͑̑o͇̻͈̓̋̀̓̐͟ͅ ͈̐ȑ͜e͗̀͟͢a̢̰̣̱̞͌̿̓̓͞s͙͚͔̓͌̓ò̲̳̏n̪͠ ̰̝͇̦͔̀͐̇͒͛g̞͈̭̙̋͌͗̅͟͞i̖̗͆̅v̹̐en!̮̦͉̈́̇̊"
