@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
   message.author.send(boi);
    }
    if(args[0] == "cool"){
-  message.delete();
+  return message.delete();
     let boi = new Discord.RichEmbed()
     .setColor("red")
     .setFooter("No cool command :(")
