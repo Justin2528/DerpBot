@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
       .setDescription(`The bot prefix is: ${prefix}\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n **Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
      .setFooter("DerpBot v1.0", bot.user.displayAvatarURL)
     
-      message.channel.send(SHembed)
+      return message.channel.send(SHembed)
       }}
    
   if(!args[0]){
