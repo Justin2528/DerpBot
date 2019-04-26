@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     const embed = new Discord.RichEmbed()
     .setColor(color)
     .setImage(`${body.image}`)
-    message.channel.send(`The magic API says: **${body.answer}**`, {embed});
+    message.channel.send(`The god says: **${body.answer}**`, {embed});
   
 }
 
