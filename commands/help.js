@@ -45,6 +45,12 @@ module.exports.run = async (bot, message, args) => {
     .setFooter("Psst! You found a secret command! `cool`")
   message.author.send(boi);
    }
+   if(args[0] == "cool"){
+  message.delete();
+    let boi = new Discord.RichEmbed()
+    .setColor("red")
+    .setFooter("No cool command :(")
+   }
 
 }
 
