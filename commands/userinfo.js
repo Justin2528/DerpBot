@@ -4,7 +4,7 @@ const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
     let uEmbed = new Discord.RichEmbed()
-    .setColor(colours.red_light)
+    .setColor("RANDOM")
     .setTitle("Server Info")
     .setThumbnail(message.guild.iconURL)
     .setAuthor(`${message.author.username} Info`, message.author.displayAvatarURL)
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("**ID:**", `${message.author.id}`, true)
     .addField("**Status:**", `${message.author.presence.status}`, true)
     .addField("**Created At:**", `${message.author.createdAt}`, true)
-    .setFooter(`TestBot | Footer`, bot.user.displayAvatarURL);
+    .setFooter(`DerpBot | Footer`, bot.user.displayAvatarURL);
 
     message.channel.send({embed: uEmbed});
 }
