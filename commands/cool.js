@@ -1,6 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+    message.delete();
+  message.author.send("YOU ARE REALLY COOL!");
+  message.author.send("I guess?");
+  message.author.send("Yeah am not lying.");
   
 }
 
