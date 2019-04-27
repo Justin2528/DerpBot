@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
 
         msg.delete();
 
-   if(args[0] == "img") retrun message.channel.send(mEmbed)
+   if(args[0] == "img") return message.channel.send(mEmbed)
 
 }
 
