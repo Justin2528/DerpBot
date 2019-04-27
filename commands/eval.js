@@ -1,45 +1,29 @@
 const config = require("../botconfig.json");
-const util = require("util");
+const { inspect } = require("util");
 const ownerid = "386490806716071946";
 
 module.exports.run = async (bot, message, args) => {
 
-let args = message.content.split(" ").slice(1);   
-let code = args.join(' ');
-  if (message.author.id != '') return;
-    try {
-  let ev = eval(code)
-                let str = util.inspect(ev, {
-                    depth: 1
-                })
-                 str = `${str.replace(new RegExp(`${client.token}|${process.env.TOKEN}`, "g"), "nop?")}`;
-                if(str.length > 1800) {
-                    str = str.substr(0, 1800)
-                    str = str + "..."
-                }
-                message.delete(); 
-    message.channel.send("", { embed: { 
-      color: 2551400,      
-  fields: [{        
-    name: '**Input**',     
-      value: '\`\`\`' + code + '\`\`\`'         
-},{     
-      name: '**Output**', 
-          value: '\`\`\`' + str + '\`\`\`'  
-        }], 
-      footer: {     
-    text: ``    }     }});} catch (err) {   message.react("❌");
-message.channel.send("", { embed: { 
-      color: 2551400,      
-  fields: [{        
-    name: '**Input**',     
-      value: '\`\`\`' + code + '\`\`\`'         
-},{     
-      name: '**Output**', 
-          value: '\`\`\`' + err + '\`\`\`'  
-        }], 
-      footer: {     
-    text: ``    }     }});    } 
+    if(message.author.id == ownerid) {
+        let toEval = args.join(" ");
+        let evaluated = inspect(eval(toEval, { depth: 0 } ))
+        try {
+            if(toEval) {
+                let hrStart = process.hrtime()
+                let hrDiff;
+                hrDiff = process.hrtime(hrStart)
+                return message.channel.send(`*Executed in ${hrDiff[0] > 0 ? `${hrDiff[0]}s` : ''}${hrDiff[1] / 1000000}ms.*\`\`\`javascript\n${evaluated}\n\`\`\``, { maxLength: 1900 })
+                
+            } else {
+                message.channel.send("Error whilst evaluating: `cannot evaluated air`")
+            }
+        } catch(e) {
+            message.channel.send(`Error whilst evaluating: \`${e.message}\``)
+        }
+    } else {
+        return message.reply(" you dont have permission to use this command.").then(m => m.delete(10000))
+    }
+
 
 }
 
