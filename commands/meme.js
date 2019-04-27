@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) => {
         let mEmbed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(`MEMES!`, message.guild.iconURL)
+       .setDescription(body.text)
         .setImage(body.url)
         .setTimestamp()
         .setFooter(`Meme 101`, bot.user.displayAvatarURL)
