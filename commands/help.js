@@ -5,6 +5,8 @@ const prefix = botconfig.prefix
 module.exports.run = async (bot, message, args) => {
   
   if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead!`);
+if(args[0] == "cool") return message.channel.send("No such command call `cool`");
+     
   
   if(args[0]){
     let command = args[0];
@@ -45,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter("Psst! You found a secret command! `cool`")
   message.author.send(boi);
    }
-   if(args[0] == "cool") return message.channel.send("No such command call `cool`")
+
      
 
 }
