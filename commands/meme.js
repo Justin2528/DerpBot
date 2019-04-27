@@ -14,14 +14,21 @@ module.exports.run = async (bot, message, args) => {
         let mEmbed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(`MEMES!`, message.guild.iconURL)
-       .setDescription(body.text)
         .setImage(body.url)
         .setTimestamp()
         .setFooter(`Meme 101`, bot.user.displayAvatarURL)
 
-        message.channel.send({embed: mEmbed})
+       let tEmbed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor(`MEMES!`, message.guild.iconURL)
+       .setDescription(body.text)
+        .setTimestamp()
+        .setFooter(`Meme 101`, bot.user.displayAvatarURL)
 
         msg.delete();
+
+   if(args[0] == "img") retrun message.channel.send(mEmbed)
+
 }
 
 
