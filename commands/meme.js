@@ -28,6 +28,7 @@ module.exports.run = async (bot, message, args) => {
         msg.delete();
 
    if(args[0] == "img") return message.channel.send(mEmbed)
+   if(args[0] == "text") return message.channel.send(tEmbed)
 
 }
 
@@ -36,7 +37,7 @@ module.exports.config = {
     name: "meme",
     noalias: "No Aliases",
     description: "Meme ¯\_(ツ)_/¯",
-    usage: "d>meme",
+    usage: "d>meme (img/text)",
     accessableby: "Members",
     aliases: ["m", "joke"]
 }
