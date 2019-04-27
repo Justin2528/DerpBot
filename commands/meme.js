@@ -26,9 +26,11 @@ module.exports.run = async (bot, message, args) => {
         .setFooter(`Meme 101`, bot.user.displayAvatarURL)
 
         msg.delete();
+if(!args[0]) return message.channel.send("img/text?");
 
    if(args[0] == "img") return message.channel.send(mEmbed)
    if(args[0] == "text") return message.channel.send(tEmbed)
+   
 
 }
 
