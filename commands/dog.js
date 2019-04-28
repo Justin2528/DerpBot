@@ -36,4 +36,4 @@ module.exports.config = {
     accessableby: "Cat",
     aliases: ["meow", "meow"]
 }
-© 2019 GitHub, Inc
+
