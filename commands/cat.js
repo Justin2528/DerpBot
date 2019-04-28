@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const botconfig = require("../botconfig.json");
-const colours = require("../colours.json");
+
 const superagent = require("superagent")
 
 
@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     let meow = meows[Math.floor(Math.random() * meows.length)]
 
         let cEmbed = new Discord.RichEmbed()
-        .setColor(colours.cyan)
+        .setColor("CYAN")
         .setAuthor(meow, message.guild.iconURL)
         .setImage(body.file)
         .setTimestamp()
