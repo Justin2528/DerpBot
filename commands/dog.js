@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
         .setAuthor(meow, message.guild.iconURL)
         .setImage(body.message)
         .setTimestamp()
-        .setFooter(`Meow`, bot.user.displayAvatarURL)
+        .setFooter(`OOf`, bot.user.displayAvatarURL)
 
         message.channel.send({embed: cEmbed})
         
