@@ -32,13 +32,15 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", async message => {
   if(message.author.bot) return;
-   // if (message.channel.type === "dm") return message.reply("Command don't work in DM channel.")
+if (message.channel.type === "dm") return message.channel.send("Sorry to tell you but commands don't work in DM channel!")
   
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ")
   let cmd  = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
 
+        
+    
 if(!message.content.startsWith(prefix)) return;
   
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
