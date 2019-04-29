@@ -30,10 +30,10 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.config = {
-    name: "cat",
-    description: "Meow",
-    usage: "d>cat",
-    accessableby: "Cat",
-    aliases: ["meow", "meow"]
+    name: "dog",
+    description: "Oof",
+    usage: "d>dog",
+    accessableby: "Doger",
+    aliases: ["moof", "boof"]
 }
 
