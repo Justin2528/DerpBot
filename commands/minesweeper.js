@@ -33,7 +33,7 @@ module.exports.config = {
   name: "minesweeper",
   aliases: ["boom"],
   description: "Play Minesweeper!",
-  usage: "d>minesweeper",
+  usage: "d>minesweeper <rows> <columns> <mines>",
   noalias: "No Aliases",
   accessableby: "Members"
 }
