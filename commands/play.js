@@ -20,7 +20,7 @@ function play(connection, message) {
 });
 
 }
-  if(!args[0]) {
+  if(!args[1]) {
     message.channel.send("Gimme da music link.");
   }
   if(!message.member.voiceChannel) {
