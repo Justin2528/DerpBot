@@ -6,34 +6,20 @@ module.exports.run = async (bot, message, args) => {
 
 
 
-let servers = {};
+    if (!message.member.voiceChannel) return message.channel.send('Please connect to a voice channel.');
+    if (message.guild.me.voiceChannel) return message.channel.send('Sorry, the bot is already connected to the guild.');
+    if (!args[0]) return message.channel.send('Sorry, please input a url following the command.');
 
-function play(connection, message) {
-  var server = servers[message.guild.id];
+    let validate = await ytdl.validateURL(args[0]);
+    if (!validate) return message.channel.send('Sorry, please input a **valid** url following the command.');
 
-  server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-  server.queue.shift();
+    let info = await ytdl.getInfo(args[0]);
+    let connection = await message.member.voiceChannel.join();
+    let dispatcher = await connection.play(ytdl(args[0], {
+        filter: 'audioonly'
+    }));
 
-  server.dispatcher.on("end", function () {
-   if (server.queue[0]) play(connection, message);
-   else connection.disconnect();
-});
-
-}
-  if(!args[0]) {
-    message.channel.send("Gimme da music link.");
-  }
-  if(!message.member.voiceChannel) {
-      message.channel.send("You are not in a voice channel...");
-   }
-  if(!servers[message.guild.id]) servers[message.guild.id] = {
-    queue: []
-   };
-  var server = servers[message.guild.id];
-
-  if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-      play(connection, message);
-  });
+    message.channel.send(`Now playing: ${info.title}`);
 }
 
 
