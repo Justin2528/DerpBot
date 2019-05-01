@@ -12,6 +12,7 @@
     "discord.js": "^11.4.2",
     "fs": "0.0.1-security",
      "math-expression-evaluator": "^1.2.17",
+    "ffmpeg": "0.0.4",
     "memejs": "^1.0.7",
     "moment": "^2.22.2",
     "moment-duration-format": "^2.2.2",
