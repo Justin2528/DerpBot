@@ -25,9 +25,9 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
   name: "update",
-  aliases: ["update"],
+  aliases: ["changelog"],
   description: "Uh get it?",
-  usage: "d>changelog <entryID>",
+  usage: "d>update <entryID>",
   noalias: "No Aliases",
   accessableby: "Members"
 }
