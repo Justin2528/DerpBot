@@ -35,7 +35,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `userinfo` `unban` `kick` `ping` `uptime` `???` `yesorno` `meme` `purge` `eval` `reload` `cat` `dog`")
+    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `userinfo` `unban` `kick` `ping` `uptime` `???` `yesorno` `meme` `purge` `eval` `reload` `cat` `dog` `minesweeper`")
         .setFooter("DerpBot v1.0", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
     message.author.send(Sembed);
