@@ -21,17 +21,17 @@ var mcPort = 25565;
             body = JSON.parse(body);
             var status = '*Minecraft server is currently offline*';
             if(body.online) {
-                status = '**Minecraft** server is **online**  -  ';
+                status = '**Minecraft** server is **online**';
                 if(body.players.now) {
-                    status += '**' + body.players.now + '** people are playing now! -';
+                    status += '\n**' + body.players.now + '** people are playing now!';
                 } else {
-                    status += '*Nobody is playing!*';
+                    status += '\n*Nobody is playing!*';
                 }
                  if(body.motd) {
-                   status += '**motd:' + body.motd + '** -'; 
+                   status += '\n**motd:' + body.motd + '**'; 
                  }
                  if(body.server.name) {
-                   status += '**name:' + body.server.name + '**'
+                   status += '\n**name:' + body.server.name + '**'
                  }
             }
             message.reply(status);
