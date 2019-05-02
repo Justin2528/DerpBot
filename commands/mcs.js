@@ -28,7 +28,7 @@ var mcPort = 25565;
                     status += '\n*Nobody is playing!*';
                 }
                  if(body.motd) {
-                   status += '\n**motd:' + body.motd + '**'; 
+                   status += '\n**motd: ' + body.motd + '**'; 
                  }
                  if(body.server.name) {
                    status += '\n**name:' + body.server.name + '**'
