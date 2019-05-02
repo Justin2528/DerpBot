@@ -6,12 +6,12 @@ var request = require('request');
 
 
 module.exports.run = async (bot, message, args) => {
-var mcCommand = 'd>msc';
+
 var mcIP = args[0]; // Your MC server IP
 var mcPort = 25565;
 
 
-    if (message.content === mcCommand) {
+
         var url = 'http://mcapi.us/server/status?ip=' + mcIP + '&port=' + mcPort;
         request(url, function(err, response, body) {
             if(err) {
@@ -30,7 +30,7 @@ var mcPort = 25565;
             }
             message.reply(status);
         });
-    }
+    
 }
 
 
