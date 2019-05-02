@@ -6,21 +6,24 @@ let prefix = botconfig.prefix
 require("./util/eventHandler")(bot);
 
      
+var servers = {};
+
+
 
 function play(connection, message) {
-  var server = servers[message.guild.id];
+    var server = servers[message.guild.id];
 
-  server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-  server.queue.shift();
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
 
-  server.dispatcher.on("end", function () {
-   if (server.queue[0]) play(connection, message);
-   else connection.disconnect();
-});
+    server.queue.shift();
+
+    server.dispatcher.on("end", function() {
+        if (server.queue[0]) play(connection, message);
+        else connection.disconnect();
+    });
 
 }
 
-var servers = {};
 
 const fs = require("fs");
 bot.commands = new Discord.Collection();
