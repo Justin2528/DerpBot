@@ -14,7 +14,7 @@ fs.readdir("./commands/", (err, files) => {
 
     if(err) console.log(err)
     
-    var servers = {}
+ 
     
     let jsfile = files.filter(f => f.split(".").pop() === "js")
     if(jsfile.length <= 0) {
@@ -54,7 +54,7 @@ if(!message.content.startsWith(prefix)) return;
   }
   
     if(cmd ===`${prefix}play`) {
-    
+       var servers = {}
 
 
 function play(connection, message) {
