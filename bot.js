@@ -5,6 +5,22 @@ const bot = new Discord.Client({disableEveryone: true});
 let prefix = botconfig.prefix
 require("./util/eventHandler")(bot);
 
+     
+
+function play(connection, message) {
+  var server = servers[message.guild.id];
+
+  server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+  server.queue.shift();
+
+  server.dispatcher.on("end", function () {
+   if (server.queue[0]) play(connection, message);
+   else connection.disconnect();
+});
+
+}
+
+var servers = {};
 
 const fs = require("fs");
 bot.commands = new Discord.Collection();
@@ -54,21 +70,10 @@ if(!message.content.startsWith(prefix)) return;
   }
   
     if(cmd ===`${prefix}play`) {
-       var servers = {}
+ 
 
 
-function play(connection, message) {
-  var server = servers[message.guild.id];
 
-  server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-  server.queue.shift();
-
-  server.dispatcher.on("end", function () {
-   if (server.queue[0]) play(connection, message);
-   else connection.disconnect();
-});
-
-}
   if(!args[1]) {
     return message.channel.send("Gimme da music link.");
   }
