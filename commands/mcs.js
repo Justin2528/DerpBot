@@ -23,10 +23,16 @@ var mcPort = 25565;
             if(body.online) {
                 status = '**Minecraft** server is **online**  -  ';
                 if(body.players.now) {
-                    status += '**' + body.players.now + '** people are playing!';
+                    status += '**' + body.players.now + '** people are playing now! -';
                 } else {
                     status += '*Nobody is playing!*';
                 }
+                 if(body.motd) {
+                   status += '**motd:' + body.motd + '** -'; 
+                 }
+                 if(body.name) {
+                   status += '**name:' + body.name + '**'
+                 }
             }
             message.reply(status);
         });
