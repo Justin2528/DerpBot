@@ -30,8 +30,8 @@ var mcPort = 25565;
                  if(body.motd) {
                    status += '**motd:' + body.motd + '** -'; 
                  }
-                 if(body.name) {
-                   status += '**name:' + body.name + '**'
+                 if(body.server.name) {
+                   status += '**name:' + body.server.name + '**'
                  }
             }
             message.reply(status);
