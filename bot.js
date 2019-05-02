@@ -70,10 +70,10 @@ function play(connection, message) {
 
 }
   if(!args[1]) {
-    message.channel.send("Gimme da music link.");
+    return message.channel.send("Gimme da music link.");
   }
   if(!message.member.voiceChannel) {
-      message.channel.send("You are not in a voice channel...");
+      return message.channel.send("You are not in a voice channel...");
    }
   if(!servers[message.guild.id]) servers[message.guild.id] = {
     queue: []
