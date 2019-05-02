@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 
   let username = collected.first().content;
 
-  message.channel.send(`Hello ${username}! (Working...)`)
+  return message.channel.send(`Hello ${username}! (Working...)`)
 
     }).catch(err => {
         message.reply("Time has expired!").then(r => r.delete(5000));
