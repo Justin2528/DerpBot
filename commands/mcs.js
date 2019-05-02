@@ -38,5 +38,5 @@ module.exports.config = {
   description: "Check the minecraft server stats!",
   usage: "/mcs <serverIP>",
   noalias: "No Aliases",
-  accessableby: ""
+  accessableby: "Members"
 }
