@@ -3,6 +3,16 @@ const botconfig = require("../botconfig.json")
 const prefix = botconfig.prefix
 
 module.exports.run = async (bot, message, args) => {
+
+    let Gembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`DerpBot Help`, message.guild.iconURL)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`Games || DerpBot\n The bot prefix is: ${prefix}`)
+    .addField(`Games`, "minesweeper")
+        .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
+    message.channel.send(embed).then(m => m.delete(10000));
   
   if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead!`);
 if(args[0] == "cool") return message.channel.send("No such command call `cool`");
@@ -35,7 +45,8 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `userinfo` `unban` `kick` `ping` `uptime` `???` `yesorno` `meme` `purge` `eval` `reload` `cat` `dog` `minesweeper`")
+    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `userinfo` `unban` `kick` `ping` `uptime` `???` `yesorno` `meme` `purge` `eval` `reload` `cat` `dog` `minesweeper` `invite`")
+    .addField(`Psst!`, `Do d>help games for games!`)
         .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
     message.author.send(Sembed);
