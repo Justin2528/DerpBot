@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const quiz = [
   { q: "What color is the sky?", a: ["no color", "invisible"] },
-  { q: "What does mcs stand for?", a: [""] }
+  { q: "What does mcs stand for?", a: ["minecraft server stats"] }
 //Example: { q: "", a: [""] }
 ];
 const options = {
