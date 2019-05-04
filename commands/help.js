@@ -4,6 +4,16 @@ const prefix = botconfig.prefix
 
 module.exports.run = async (bot, message, args) => {
 
+
+  
+  if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead!`);
+if(args[0] == "cool") return message.channel.send("No such command call `cool`");
+    if(args[0] == "games"){
+        let gembed = new Discord.RichEmbed()
+    .setAuthor("Help Command!", message.guild.iconURL)
+    .setColor("RANDOM")
+    .setDescription(`${message.author.username} check your DMs! 📬`)
+    
     let Gembed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setAuthor(`DerpBot Help`, message.guild.iconURL)
@@ -12,10 +22,9 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(`Games || DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Games`, "minesweeper")
         .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
-    message.channel.send(embed).then(m => m.delete(10000));
-  
-  if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead!`);
-if(args[0] == "cool") return message.channel.send("No such command call `cool`");
+     message.channel.send(gembed).then(m => m.delete(10000));
+    return message.author.send(Gembed);
+    }
      
   
   if(args[0]){
