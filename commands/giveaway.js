@@ -9,10 +9,10 @@ message.channel.send(giveaway)
 
 
 module.exports.config = {
-  name: "",
-  aliases: [""],
-  description: "",
-  usage: "",
+  name: "giveaway",
+  aliases: ["gift"],
+  description: "Giveaway :D",
+  usage: "d>giveaway",
   noalias: "No Aliases",
-  accessableby: ""
+  accessableby: "I don't know..."
 }
