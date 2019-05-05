@@ -1,0 +1,18 @@
+const Discord = require("discord.js");
+ const Giveaway = require("discord.js-giveaway")
+module.exports.run = async (bot, message, args) => {
+ 
+ 
+const giveaway = Giveaway(bot, {})
+message.channel.send(giveaway)
+}
+
+
+module.exports.config = {
+  name: "",
+  aliases: [""],
+  description: "",
+  usage: "",
+  noalias: "No Aliases",
+  accessableby: ""
+}
