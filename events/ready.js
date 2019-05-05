@@ -13,5 +13,5 @@ module.exports = bot => {
       let status = statuses[Math.floor(Math.random() * statuses.length)]
        bot.user.setActivity(status, {type: "WATCHING"});
    
-   }, 3500)
+   }, 12000)
 }
