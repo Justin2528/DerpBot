@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
 
-const giveaway = Giveaway(bot, {giveawayRole: "giveaway", reactEmote: "🎉"});
+const giveaway = Giveaway(bot, { "giveawayRole": "giveaway", "reactEmote": "🎉" });
 
 }
 
