@@ -38,6 +38,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setTimestamp()
     .setDescription(`Beta Commands || DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands`, "giveaway")
+    .addField(`Note:` , `Because those commands are not released, there will be a lot of problems..`)
         .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
      message.channel.send(eembed).then(m => m.delete(10000));
     return message.author.send(Bembed);
@@ -52,7 +53,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
       .setColor("RANDOM")
       .setAuthor(`DerpBot Help`, message.guild.iconURL)
       .setDescription(`The bot prefix is: ${prefix}\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n **Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
-     .setFooter("DerpBot v1.0", bot.user.displayAvatarURL)
+     .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
     
       return message.channel.send(SHembed)
       }}
