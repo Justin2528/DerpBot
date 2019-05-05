@@ -1,10 +1,14 @@
 const Discord = require("discord.js");
- const Giveaway = require("discord.js-giveaway")
+ const Giveaway = require("discord.js-giveaway");
+
+
 module.exports.run = async (bot, message, args) => {
- 
- 
-const giveaway = Giveaway(bot, {})
-message.channel.send(giveaway)
+  if(!message.member.roles.find(r => r.name === "giveaway"){
+  return message.channel.send("You need da `giveaway` role!")
+}
+
+const giveaway = Giveaway(bot, {giveawayRole: "giveaway", reactEmote: "🎉"});
+  message.channel.send(giveaway)
 }
 
 
