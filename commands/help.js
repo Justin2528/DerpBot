@@ -25,6 +25,23 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
      message.channel.send(gembed).then(m => m.delete(10000));
     return message.author.send(Gembed);
     }
+    if(args[0] == "beta"){
+        let eembed = new Discord.RichEmbed()
+    .setAuthor("Help Command!", message.guild.iconURL)
+    .setColor("RANDOM")
+    .setDescription(`${message.author.username} check your DMs! 📬`)
+    
+    let Bembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`DerpBot Help`, message.guild.iconURL)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`Beta Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .addField(`Commands`, "giveaway")
+        .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
+     message.channel.send(eembed).then(m => m.delete(10000));
+    return message.author.send(Bembed);
+    }
      
   
   if(args[0]){
@@ -56,6 +73,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `userinfo` `unban` `kick` `ping` `uptime` `???` `yesorno` `meme` `purge` `eval` `reload` `cat` `dog` `minesweeper` `invite`")
     .addField(`Psst!`, `Do d>help games for games!`)
+    .addField(`Are you a tester?`, `Do d>help beta for some commands that are not release!`)
         .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
     message.author.send(Sembed);
