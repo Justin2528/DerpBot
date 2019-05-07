@@ -26,9 +26,9 @@ let ok = new Discord.RichEmbed()
 .setFooter("We're adding more!")
 
 message
-})else{
-message.channel.send("Nope... no stats for u cus u don't play pit...");
-}
+}) catch(e) {
+            message.channel.send(`Something went wrong!: \`${e.message}\``)
+        }
 }
 
 
