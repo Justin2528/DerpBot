@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 //Define moment
-var moment = require("moment");
+const moment = require("moment");
 
 module.exports.run = async (bot, message, args) => {
 	let user;
