@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
 		.addField("Roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
 		.setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
      message.channel.send({embed});
-    }
+    
 }
 
 
