@@ -9,6 +9,8 @@ if(!IGN) return message.channel.send("Ok, what IS UR IGN????")
 
  var url = "https://api.hypixel.net/player?key=12986a35-ab5a-49f4-b23c-e6695ae3cfd1&name=" + IGN;
 
+console.log(url);
+
 snekfetch.get(url).then(r => {
 let body = r.body
 
