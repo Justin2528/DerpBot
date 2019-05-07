@@ -25,10 +25,8 @@ let ok = new Discord.RichEmbed()
 .addField("Fishing Rod Launched", body.player.pit_stats_ptl.fishing_rod_launched)
 .setFooter("We're adding more!")
 
-message
-}) catch(e) {
-            message.channel.send(`Something went wrong!: \`${e.message}\``)
-        }
+message.channel.send(ok)
+}) 
 }
 
 
