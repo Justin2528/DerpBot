@@ -43,4 +43,6 @@ module.exports.config = {
   aliases: ["Hypixel"],
   description: "Get ya boi's pit stats",
   usage: "d>pitstats <IGN>",
-  n
+  noalias: "No Aliases",
+  accessableby: "memberssssss/giraffe/pitboi/Justin2528/duh"
+}
