@@ -39,7 +39,7 @@ message.channel.send(ok)
 
 
 module.exports.config = {
-  name: "pitstats",
+  name: "pitstatsbeta",
   aliases: ["Hypixel"],
   description: "Get ya boi's pit stats",
   usage: "d>pitstats <IGN>",
