@@ -30,8 +30,8 @@ if(!args[0]) return message.channel.send("img/text?");
         msg.delete();
 
 
-   if(args[0] == "img") return message.channel.send(mEmbed)
-   if(args[0] == "text") return message.channel.send(tEmbed)
+   if(args[0] == "img") return msg.edit(mEmbed)
+   if(args[0] == "text") return msg.edit(tEmbed)
    
 
 }
