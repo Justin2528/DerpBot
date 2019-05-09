@@ -17,6 +17,7 @@
      "math-expression-evaluator": "^1.2.17",
     "ffmpeg": "0.0.4",
         "ffmpeg-binaries": "^4.0.0",
+"node-fetch": "2.5.0",
     "memejs": "^1.0.7",
     "moment": "^2.22.2",
     "moment-duration-format": "^2.2.2",
