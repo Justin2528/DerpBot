@@ -8,12 +8,12 @@ module.exports.run = async (bot, message, args) => {
     if (message.mentions.users.size < 2) return message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription(message.author.tag + 'd>1vs1 <boi> <boi>').setFooter('', bot.user.avatarURL).setTimestamp());
     var sans = ["10'a","1'e","20'ye","30'a","2 ye"]
     var sonuc = sans[Math.floor((Math.random() * sans.length))];
-      message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('The oof battle.', bot.user.avatarURL).setTimestamp())
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('You are ded meat boi', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('THonk', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('Senpai hi', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('Duh ', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('War is over!').setFooter('Battle 101', bot.user.avatarURL).setTimestamp()))
+      message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Fighting').setFooter('The oof battle.', bot.user.avatarURL).setTimestamp())
+      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Fighting').setFooter('You are ded meat boi', bot.user.avatarURL).setTimestamp()))
+      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Fighting').setFooter('THonk', bot.user.avatarURL).setTimestamp()))
+      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Hehe uh sorry|| Fighting').setFooter('Senpai hi', bot.user.avatarURL).setTimestamp()))
+      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('LoLolol Fighting').setFooter('Duh ', bot.user.avatarURL).setTimestamp()))
+      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('War is (not) over!').setFooter('Battle 101', bot.user.avatarURL).setTimestamp()))
       .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Da Winner is: **' + user.tag+'**').setImage("https://media.giphy.com/media/3oEhmVCSmpW56nR6rm/giphy.gif").setFooter('1vs1 END.', bot.user.avatarURL).setTimestamp()))
       
 }
