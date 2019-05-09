@@ -16,7 +16,7 @@ const snekfetch = require("snekfetch");
 snekfetch.get(url).then(r => {
 let body = r.body
 
-message.channel.send(url)
+message.channel.send(body)
 
 let ok = new Discord.RichEmbed()
 .setTitle("Pit stats (Hypixel)")
