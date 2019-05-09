@@ -16,6 +16,8 @@ const snekfetch = require("snekfetch");
 snekfetch.get(url).then(r => {
 let body = r.body
 
+console.log(body)
+
 let ok = new Discord.RichEmbed()
 .setTitle("Pit stats (Hypixel)")
 .setColor("9b7653")
