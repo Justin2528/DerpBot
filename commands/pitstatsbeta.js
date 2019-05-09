@@ -13,7 +13,7 @@ if(!IGN) return message.channel.send("Ok, what IS UR IGN????")
 
 console.log(url);
 
-fetch('https://assets-cdn.github.com/images/modules/logos_page/Octocat.png')
+fetch(url)
     .then(res => {
  let body = res.body
 
