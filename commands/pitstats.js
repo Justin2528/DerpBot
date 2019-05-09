@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const snekfetch = require("snekfetch");
+
 
 module.exports.run = async (bot, message, args) => {
 
@@ -10,6 +10,8 @@ if(!IGN) return message.channel.send("Ok, what IS UR IGN????")
  var url = "https://api.hypixel.net/player?key=cc80a6a3-b44d-4249-a4b1-546d03aae6dc&name=" + IGN;
 
 console.log(url);
+
+const snekfetch = require("snekfetch");
 
 snekfetch.get(url).then(r => {
 let body = r.body
