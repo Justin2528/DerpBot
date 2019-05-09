@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     var sans = ["10'a","1'e","20'ye","30'a","2 ye"]
     var sonuc = sans[Math.floor((Math.random() * sans.length))];
       message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('The oof battle.', client.user.avatarURL).setTimestamp())
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('You're ded meat boi', client.user.avatarURL).setTimestamp()))
+      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('You are ded meat boi', client.user.avatarURL).setTimestamp()))
       .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('THonk', client.user.avatarURL).setTimestamp()))
       .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('Senpai hi', client.user.avatarURL).setTimestamp()))
       .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('The War is Coming').setFooter('Duh ', client.user.avatarURL).setTimestamp()))
