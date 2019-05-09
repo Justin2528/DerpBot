@@ -15,7 +15,11 @@ console.log(url);
 
 fetch(url)
     .then(res => {
+
+
  let body = res.body
+
+console.log(body)
 
 
 let ok = new Discord.RichEmbed()
