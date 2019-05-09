@@ -37,8 +37,8 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Beta Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`, "giveaway")
-    .addField(`Note:` , `Because those commands are not released, there will be a lot of problems..`)
+    .addField(`Commands`,' `giveaway` `pitstats` `1vs1`')
+    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.0.2", bot.user.displayAvatarURL)
      message.channel.send(eembed).then(m => m.delete(10000));
     return message.author.send(Bembed);
