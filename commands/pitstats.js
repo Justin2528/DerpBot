@@ -29,6 +29,8 @@ let ok = new Discord.RichEmbed()
 // .addField("Fishing Rod Launched", body.player.pit_stats_ptl.fishing_rod_launched)
 .setFooter("We're adding more!")
 
+//Ok LOL
+
 message.channel.send(ok)
 }) 
 }
