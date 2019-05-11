@@ -43,7 +43,7 @@ let ok = new Discord.RichEmbed()
 .addField("Fishing Rod Launched", body.player.stats.Pit.pit_stats_ptl.fishing_rod_launched || "0")
 .addField("Left Clicks", body.player.stats.Pit.pit_stats_ptl.left_clicks || "0")
 .addField("Launched by launchers", body.player.stats.Pit.pit_stats_ptl.launched_by_launchers || "0")
-.addField("Deaths", body.player.stats.Pit.pit_stats_ptl. || "0")
+.addField("Deaths", body.player.stats.Pit.pit_stats_ptl.deaths || "0")
 .setFooter("We're adding more!")
 
 //.addField("", body.player.stats.Pit.pit_stats_ptl. || "0")
