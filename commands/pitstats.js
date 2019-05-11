@@ -24,7 +24,7 @@ if(body.player === "null") return message.channel.send("ERROR 404: ${IGN} is not
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
-let hours = Math.floor(body.player.stats.Pit.pit_stats_ptl.playtime.minutes / 3600);
+let hours = Math.floor(body.player.stats.Pit.pit_stats_ptl.playtime_minutes / 3600);
 
 console.log(body)
 
