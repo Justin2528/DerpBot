@@ -8,18 +8,18 @@ module.exports.run = async (bot, message, args) => {
     let msg = await message.channel.send("Generating...")
 
     let {body} = await superagent
-    .get(`https://dog.ceo/api/breeds/image/random`)
+    .get(`http://aws.random.cat/meow`)
     //console.log(body.file)
     if(!{body}) return message.channel.send("I broke! Try again.")
     let meows = ["woof", "Woof?", "Boof", "oof", "Roses are red, violets are blue, woofs are bad."];
     let meow = meows[Math.floor(Math.random() * meows.length)]
 
         let cEmbed = new Discord.RichEmbed()
-        .setColor("CYAN")
+        .setColor("RED")
         .setAuthor(meow, message.guild.iconURL)
         .setImage(body.message)
         .setTimestamp()
-        .setFooter(`OOf`, bot.user.displayAvatarURL)
+        .setFooter(`ima kill u`, bot.user.displayAvatarURL)
 
         message.channel.send({embed: cEmbed})
         
@@ -34,6 +34,6 @@ module.exports.config = {
     description: "Oof",
     usage: "d>dog",
     accessableby: "Doger",
-    aliases: ["moof", "boof"]
+    aliases: ["Marwoof", "boof"]
 }
 
