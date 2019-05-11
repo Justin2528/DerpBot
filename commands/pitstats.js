@@ -24,6 +24,8 @@ if(body.player === "null") return message.channel.send("ERROR 404: ${IGN} is not
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
+let hours = Math.floor(body.player.stats.Pit.pit_stats_ptl.playtime.minutes / 3600);
+
 console.log(body)
 
 let ok = new Discord.RichEmbed()
@@ -31,7 +33,7 @@ let ok = new Discord.RichEmbed()
 .setColor("9b7653")
 .setDescription(`${IGN}'s Pit stats`)
 .addField("XP", body.player.stats.Pit.profile.xp || "0")
-.addField("Play time (mins)", body.player.stats.Pit.pit_stats_ptl.playtime_minutes)
+.addField("Play time (mins)", hours)
 .addField("Enderchest open times", body.player.stats.Pit.pit_stats_ptl.enderchest_opened || "0")
 .addField("Joins", body.player.stats.Pit.pit_stats_ptl.joins)
 .setThumbnail(image)
@@ -39,7 +41,12 @@ let ok = new Discord.RichEmbed()
 .addField("Chat Messages", body.player.stats.Pit.pit_stats_ptl.chat_messages || "0")
 .addField("Gold earned", body.player.stats.Pit.pit_stats_ptl.cash_earned || "0")
 .addField("Fishing Rod Launched", body.player.stats.Pit.pit_stats_ptl.fishing_rod_launched || "0")
+.addField("Left Clicks", body.player.stats.Pit.pit_stats_ptl.left_clicks || "0")
+.addField("Launched by launchers", body.player.stats.Pit.pit_stats_ptl.launched_by_launchers || "0")
+.addField("Deaths", body.player.stats.Pit.pit_stats_ptl. || "0")
 .setFooter("We're adding more!")
+
+//.addField("", body.player.stats.Pit.pit_stats_ptl. || "0")
 
 //Ok LOL
 
