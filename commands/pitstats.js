@@ -27,7 +27,7 @@ let ok = new Discord.RichEmbed()
 .addField("Joins", body.player.stats.Pit.pit_stats_ptl.joins)
 .addField("Diamond Items purchased", body.player.stats.Pit.pit_stats_ptl.diamond_items_purchased)
 .addField("Chat Messages", body.player.stats.Pit.pit_stats_ptl.chat_message)
-.addField("Gold earned", body.player.stats.pit.pit_stats_ptl.cash_earned)
+.addField("Gold earned", body.player.stats.Pit.pit_stats_ptl.cash_earned)
 .addField("Fishing Rod Launched", body.player.stats.Pit.pit_stats_ptl.fishing_rod_launched)
 .setFooter("We're adding more!")
 
