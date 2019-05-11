@@ -23,7 +23,7 @@ module.exports.config = {
     name: "meme",
     noalias: "No Aliases",
     description: "Meme ¯\_(ツ)_/¯",
-    usage: "d>meme (img/text)",
+    usage: "d>meme",
     accessableby: "Members",
     aliases: ["m", "joke"]
 }
