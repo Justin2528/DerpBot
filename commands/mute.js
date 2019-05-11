@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     try{
       muterole = await message.guild.createRole({
         name: "muted",
-        color: "#000000",
+        color: "#55FFFF",
         permissions:[]
       })
       message.guild.channels.forEach(async (channel, id) => {
@@ -45,7 +45,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.config = {
   name: "mute",
   aliases: ["m","nospeak"],
-  description: "Mutes some bad boi",
+  description: "lol",
   usage: "d>mute <@user> <time>",
   noalias: "No Aliases",
   accessableby: "Staff"
