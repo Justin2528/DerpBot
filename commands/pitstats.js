@@ -20,6 +20,8 @@ let body = r.body
 
 if(!body.player.stats.Pit) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
 
+if(body.player == "null") return message.channel.send("ERROR 404: ${IGN} is not a player...")
+
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
 console.log(body)
