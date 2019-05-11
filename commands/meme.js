@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("RANDOM")
   .setImage(data.url[0])
   message.channel.send({embed});
-  })};
+  })
 
    
 
