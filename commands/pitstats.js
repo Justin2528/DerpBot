@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
  
 if(!IGN) return message.channel.send("Ok, what IS UR IGN????")
 
- var url = "https://api.hypixel.net/player?key=cc80a6a3-b44d-4249-a4b1-546d03aae6dc&name=" + IGN;
+ var url = "https://api.hypixel.net/player?" + process.env.APIKEY + "&name=" + IGN;
 
 console.log(url);
 
