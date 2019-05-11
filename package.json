@@ -1,9 +1,9 @@
 {
   "name": "alexbot",
-  "version": "1.0.0",
+  "version": "1.1",
   "main": "bot.js",
   "scripts": {
-    "test": "node bot.js"
+    "test": "node test.js"
   },
   "author": "Justin2528",
   "license": "ISC",
