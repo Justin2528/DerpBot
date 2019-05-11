@@ -32,5 +32,5 @@ module.exports.config = {
     description: "Meow",
     usage: "d>cat",
     accessableby: "Cat",
-    aliases: ["Thanos Vs Marsmi! Who win? Always Marsmi idiot.", "Mars"]
+    aliases: ["Thanos Vs Marsmi! Who win? Always Marsmi you idiot.", "Mars"]
 }
