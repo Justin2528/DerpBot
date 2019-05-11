@@ -18,7 +18,7 @@ const snekfetch = require("snekfetch");
 snekfetch.get(url).then(r => {
 let body = r.body
 
-if(!body.player.stats.Pit) return message.channel.send("ERROR 404: Uh, U never player pit? (hypixel pit)")
+if(!body.player.stats.Pit) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
