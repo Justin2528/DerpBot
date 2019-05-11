@@ -45,7 +45,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.config = {
   name: "mute",
   aliases: ["m","nospeak"],
-  description: "lol",
+  description: "Mute bad bois :>",
   usage: "d>mute <@user> <time>",
   noalias: "No Aliases",
   accessableby: "Staff"
