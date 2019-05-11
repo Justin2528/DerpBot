@@ -7,7 +7,7 @@ module.exports = bot => {
       let statuses = [
          `d>help - DerpBot`,
          `Partner of EDGE! - DerpBot`,
-         `DerpBot version: v1.0.2 - DerpBot`
+         `DerpBot version: v1.1 - DerpBot`
       ]
       setInterval(function() {
       let status = statuses[Math.floor(Math.random() * statuses.length)]
