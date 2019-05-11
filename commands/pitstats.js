@@ -11,10 +11,14 @@ if(!IGN) return message.channel.send("Ok, what IS UR IGN????")
 
 console.log(url);
 
+
+
 const snekfetch = require("snekfetch");
 
 snekfetch.get(url).then(r => {
 let body = r.body
+
+let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
 console.log(body)
 
