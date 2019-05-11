@@ -4,7 +4,7 @@ const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
 
-    if(message.author.id != "386490806716071946" || "337517146982842368" || "253796217820151808") return message.channel.send("You're not the bot the owner!")
+    if(message.author.id != "386490806716071946") return message.channel.send("You're not the bot the owner!")
 
     if(!args[0]) return message.channel.send("ERROR: can't reload error")
 
