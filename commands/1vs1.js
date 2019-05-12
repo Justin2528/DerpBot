@@ -9,28 +9,31 @@ module.exports.run = async (bot, message, args) => {
 let target = args[0]
 if (!target) return message.reply("Please mention a <Can be text> to battle!").then(r => r.delete(10000));
 
-const filter = m => m.author.id === target.id;
+let target2 = args[1]
+if(!target2) return message.reply("d>1vs1 <stuff> <stuff>")
+
+
 
 let embed = new Discord.RichEmbed()
 .setTitle("Battle!")
-.setDescription(`${target} vs ${message.author}`)
+.setDescription(`${target} vs ${target2}`)
 .setColor("GREEN")
 
 message.channel.send(`Pow!`).then(r => r.delete(20000))
 
 
 
-        let chance = Math.floor(Math.random * 1000) + 1;
+        let chance = Math.floor(Math.random * 1000) + 500;
         if (chance < 500) {
             
-            embed.addField("Winner", message.author);
+            embed.addField("Winner", target2);
             embed.addField("Loser", target);
             message.channel.send(embed)
 
         } else {
     
             embed.addField("Winner", target);
-            embed.addField("Loser", message.author);
+            embed.addField("Loser", target2);
             message.channel.send(embed)
             
         }
@@ -46,7 +49,7 @@ module.exports.config = {
   name: "1vs1",
   aliases: ["Battle"],
   description: "The World Battle",
-  usage: "d>1vs1 <@user> <@user>",
+  usage: "d>1vs1 <user/stuff> <user/stuff>",
   noalias: "No Aliases",
-  accessableby: ""
+  accessableby: "Members"
 }
