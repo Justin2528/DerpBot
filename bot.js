@@ -1,6 +1,7 @@
 const botconfig = require("./botconfig.json");
 const YTDL = require("ytdl-core")
 const Discord = require("discord.js");
+const send = require("quick.hook");
 const bot = new Discord.Client({disableEveryone: true});
 let prefix = botconfig.prefix
 require("./util/eventHandler")(bot);
