@@ -13,5 +13,5 @@ module.exports.config = {
   description: "Giveaway :D",
   usage: "d>giveaway",
   noalias: "No Aliases",
-  accessableby: "I don't know..."
+  accessableby: "Members"
 }
