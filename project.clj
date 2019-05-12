@@ -1,0 +1,3 @@
+
+    :repositories [["jitpack" "https://jitpack.io"]]
+        
