@@ -16,7 +16,7 @@ let embed = new Discord.RichEmbed()
 .setDescription(`${target} vs ${message.author}`)
 .setColor("GREEN")
 
-message.channel.send(`${target}  please type    accept | cancel... Will cancel after 20 seconds`).then(r => r.delete(20000))
+message.channel.send(`Pow!`).then(r => r.delete(20000))
 
 
 
