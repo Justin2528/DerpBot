@@ -2,21 +2,44 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-      if (!message.guild) {
-      return message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Eval;').setDescription(message.author.username + 'You cannot use this command in a direct message!').setFooter('', bot.user.avatarURL).setTimestamp()); }
-    let user = message.mentions.users.first();
-    if (message.mentions.users.size < 2) return message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription(message.author.tag + 'd>1vs1 <boi> <boi>').setFooter('', bot.user.avatarURL).setTimestamp());
-    var sans = ["10'a","1'e","20'ye","30'a","2 ye"]
-    var sonuc = sans[Math.floor((Math.random() * sans.length))];
-      message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Fighting').setFooter('The oof battle.', bot.user.avatarURL).setTimestamp())
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Fighting').setFooter('You are ded meat boi', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Fighting').setFooter('THonk', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Hehe uh sorry|| Fighting').setFooter('Senpai hi', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('LoLolol Fighting').setFooter('Duh ', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('War is (not) over!').setFooter('Battle 101', bot.user.avatarURL).setTimestamp()))
-      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setTitle('1vs1').setDescription('Da Winner is: **' + user.tag+'**').setImage("https://media.giphy.com/media/3oEhmVCSmpW56nR6rm/giphy.gif").setFooter('1vs1 END.', bot.user.avatarURL).setTimestamp()))
-      
-}
+    message.delete()
+
+
+
+let target = args[0]
+if (!target) return message.reply("Please mention a <Can be text> to battle!").then(r => r.delete(10000));
+
+const filter = m => m.author.id === target.id;
+
+let embed = new Discord.RichEmbed()
+.setTitle("Battle!")
+.setDescription(`${target} vs ${message.author}`)
+.setColor("GREEN")
+
+message.channel.send(`${target}  please type    accept | cancel... Will cancel after 20 seconds`).then(r => r.delete(20000))
+
+
+
+        let chance = Math.floor(Math.random * 1000) + 1;
+        if (chance < 500) {
+            
+            embed.addField("Winner", message.author);
+            embed.addField("Loser", target);
+            message.channel.send(embed)
+
+        } else {
+    
+            embed.addField("Winner", target);
+            embed.addField("Loser", message.author);
+            message.channel.send(embed)
+            
+        }
+
+    }
+
+
+
+} 
 
 
 module.exports.config = {
