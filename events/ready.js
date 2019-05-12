@@ -16,5 +16,12 @@ module.exports = bot => {
       let status = statuses[Math.floor(Math.random() * statuses.length)]
        bot.user.setActivity(status, {type: "WATCHING"});
    
+
+
    }, 12000)
+
+		setInterval(() => {
+			dbl.postStats(client.guilds.size,client.shard.id,client.shard.count);
+		}, 3200000)
+
 }
