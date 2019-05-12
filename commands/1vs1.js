@@ -23,8 +23,8 @@ message.channel.send(`Pow!`).then(r => r.delete(20000))
 
 
 
-        let chance = Math.floor(Math.random * 1000) + 500;
-        if (chance < 500) {
+        let chance = Math.floor(Math.random * 10) + 1;
+        if (chance < 5) {
             
             embed.addField("Winner", target2);
             embed.addField("Loser", target);
