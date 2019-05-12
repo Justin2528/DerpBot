@@ -20,7 +20,7 @@ let body = r.body
 
 if(!body.player.stats.Pit) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
 
-if(body.player == null){
+if(body.player != null){
  return message.channel.send("ERROR 404: ${IGN} is not a player...")
 }
 
@@ -50,6 +50,7 @@ let ok = new Discord.RichEmbed()
 .addField("Kills", body.player.stats.Pit.pit_stats_ptl.kills || "0", true)
 .addField("Assists", body.player.stats.Pit.pit_stats_ptl.assists || "0", true)
 .addField("Sword Hits", body.player.stats.Pit.pit_stats_ptl.sword_hits || "0", true)
+.addField("Arrow Hits", body.player.stats.Pit.pit_stats_ptl.arrow_hits || "0", true)
 .addField("Damage Dealt", body.player.stats.Pit.pit_stats_ptl.damage_dealt || "0", true)
 .addField("Melee Damage received", body.player.stats.Pit.pit_stats_ptl.melee_damage_received || "0", true)
 .addField("Deaths", body.player.stats.Pit.pit_stats_ptl.deaths || "0", true)
