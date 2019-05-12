@@ -21,7 +21,7 @@ module.exports = bot => {
    }, 12000)
 
 		setInterval(() => {
-			dbl.postStats(bot.guilds.size,bot.shard.id,bot.shard.count);
-		}, 3200000)
+			dbl.postStats(bot.guilds.size);
+		}, 100000)
 
 }
