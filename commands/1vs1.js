@@ -39,7 +39,7 @@ message.channel.send(`Pow!`).then(r => r.delete(20000))
 
 
 
-} 
+
 
 
 module.exports.config = {
