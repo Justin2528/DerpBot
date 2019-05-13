@@ -60,11 +60,12 @@ let ok = new Discord.RichEmbed()
 .addField("Last Login", date1, true)
 .addField("Last Logout", date3, true)
 .addField("Display Name", body.player.displayname || "0", true)
+.addField("Rank", body.player.newPackageRank || "NON", true)
 .addField("Known Aliases", body.player.knownAliases || "None", true)
 .addField("Network EXP", body.player.networkExp || "0", true)
 .setFooter("We're adding more!")
 
-//.addField("", body.player. || "0", true)
+
 
 //Ok LOL
 
