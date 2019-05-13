@@ -37,6 +37,14 @@ var day2 = currentTime2.getDate();
 var year2 = currentTime2.getFullYear();
 var date2 = day2 + "/" + month2 + "/" + year2;
 
+var dateString3 = body.player.lastLogout
+var currentTime3 = new Date(parseInt(dateString3 ));
+var month3 = currentTime.getMonth() + 1;
+var day3 = currentTime3.getDate();
+var year3 = currentTime3.getFullYear();
+var date3 = day3 + "/" + month3 + "/" + year3;
+
+
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
@@ -50,6 +58,7 @@ let ok = new Discord.RichEmbed()
 .setImage(image)
 .addField("First Login", date2, true)
 .addField("Last Login", date1, true)
+.addField("Last Logout", date3, true)
 .addField("Display Name", body.player.displayname || "0", true)
 .addField("Known Aliases", body.player.knownAliases || "None", true)
 .addField("Network EXP", body.player.networkExp || "0", true)
