@@ -62,8 +62,8 @@ let ok = new Discord.RichEmbed()
 .addField("Display Name", body.player.displayname || "0", true)
 .addField("Rank", body.player.newPackageRank || "NON", true)
 .addField("Social Media", body.player.socialMedia.links, true)
-.addField("Known Aliases", body.player.knownAliases || "None", true)
 .addField("Network EXP", body.player.networkExp || "0", true)
+.addField("Known Aliases", body.player.knownAliases || "None", true)
 .setFooter("We're adding more!")
 
 
