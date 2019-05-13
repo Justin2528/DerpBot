@@ -20,6 +20,9 @@ let body = r.body
 
 if(!body.player) return message.channel.send(`ERROR 404: Nopeee`)
 
+if(!body.player.lastLogin) return;
+if(!body.player.firstLogin) return;
+
 var dateString1 = body.player.lastLogin
 var currentTime1 = new Date(parseInt(dateString1 ));
 var month1 = currentTime1.getMonth() + 1;
