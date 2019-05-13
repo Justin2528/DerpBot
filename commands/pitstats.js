@@ -20,7 +20,7 @@ let body = r.body
 
 if(!body.player.stats.Pit) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
 
-
+if(!body.player.stats.Pit.pit_stats_ptl.playtime_minutes) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
@@ -36,7 +36,7 @@ let ok = new Discord.RichEmbed()
 .addField("Play time (hour)", hours, true)
 .setImage(image)
 .addField("Enderchest open times", body.player.stats.Pit.pit_stats_ptl.enderchest_opened || "0", true)
-.addField("Joins", body.player.stats.Pit.pit_stats_ptl.joins, true)
+.addField("Joins", body.player.stats.Pit.pit_stats_ptl.joins || "0", true)
 .setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/Prototype-64.png")
 .addField("Diamond Items purchased", body.player.stats.Pit.pit_stats_ptl.diamond_items_purchased || "0", true)
 .addField("Chat Messages", body.player.stats.Pit.pit_stats_ptl.chat_messages || "0", true)
