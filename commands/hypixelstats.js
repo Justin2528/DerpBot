@@ -49,6 +49,7 @@ var date3 = day3 + "/" + month3 + "/" + year3;
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
 
+
 console.log(body)
 
 let ok = new Discord.RichEmbed()
@@ -63,9 +64,6 @@ let ok = new Discord.RichEmbed()
 .addField("Rank", body.player.newPackageRank || "NON", true)
 .addField("Network EXP", body.player.networkExp || "0", true)
 .addField("Known Aliases", body.player.knownAliases || "None", true)
-.addField("Discord", body.player.socialMedia.links.DISCORD || "NOPE", true)
-.addField("Twitter", body.player.socialMedia.links.TWITTER || "NOPE", true)
-.addField("Hypixel Forum", body.player.socialMedia.links.HYPIXEL || "NOPE", true)
 .setFooter("We're adding more!")
 
 
