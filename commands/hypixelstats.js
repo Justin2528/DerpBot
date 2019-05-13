@@ -61,11 +61,11 @@ let ok = new Discord.RichEmbed()
 .addField("Last Logout", date3, true)
 .addField("Display Name", body.player.displayname || "0", true)
 .addField("Rank", body.player.newPackageRank || "NON", true)
+.addField("Network EXP", body.player.networkExp || "0", true)
+.addField("Known Aliases", body.player.knownAliases || "None", true)
 .addField("Discord", body.player.socialMedia.links.DISCORD || "NOPE", true)
 .addField("Twitter", body.player.socialMedia.links.TWITTER || "NOPE", true)
 .addField("Hypixel Forum", body.player.socialMedia.links.HYPIXEL || "NOPE", true)
-.addField("Network EXP", body.player.networkExp || "0", true)
-.addField("Known Aliases", body.player.knownAliases || "None", true)
 .setFooter("We're adding more!")
 
 
