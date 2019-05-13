@@ -39,7 +39,7 @@ var date2 = day2 + "/" + month2 + "/" + year2;
 
 var dateString3 = body.player.lastLogout
 var currentTime3 = new Date(parseInt(dateString3 ));
-var month3 = currentTime.getMonth() + 1;
+var month3 = currentTime3.getMonth() + 1;
 var day3 = currentTime3.getDate();
 var year3 = currentTime3.getFullYear();
 var date3 = day3 + "/" + month3 + "/" + year3;
