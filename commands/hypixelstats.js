@@ -52,7 +52,7 @@ let ok = new Discord.RichEmbed()
 .addField("Last Login", date1, true)
 .addField("Display Name", body.player.displayname || "0", true)
 .addField("Known Aliases", body.player.knownAliases || "None", true)
-.addField("Network EXP", body.player.xp || "0", true)
+.addField("Network EXP", body.player.networkExp || "0", true)
 .setFooter("We're adding more!")
 
 //.addField("", body.player. || "0", true)
