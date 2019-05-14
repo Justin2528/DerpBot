@@ -88,8 +88,8 @@ if (message.channel.type === "dm") return message.channel.send("Sorry to tell yo
   let args = messageArray.slice(1);
 
 dbl.getVotes().then(votes => {
-    let channel = "547776018933612566";
-     channel.send(`${votes} voted!`)
+    var voteC = bot.channels.get("573054179002548234");
+   voteC.send(`${votes} voted!`)
 });
 
         
