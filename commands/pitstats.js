@@ -18,6 +18,12 @@ const snekfetch = require("snekfetch");
 snekfetch.get(url).then(r => {
 let body = r.body
 
+let offon = "Player is offline!"
+
+if(body.player.lastLogout < body.player.lastLogin){
+  offon = "Player is online!"
+} 
+
 if(!body.player.stats.Pit) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
 
 if(!body.player.stats.Pit.pit_stats_ptl.playtime_minutes) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
@@ -55,7 +61,7 @@ let ok = new Discord.RichEmbed()
 .addField("Melee Damage received", body.player.stats.Pit.pit_stats_ptl.melee_damage_received || "0", true)
 .addField("Deaths", body.player.stats.Pit.pit_stats_ptl.deaths || "0", true)
 .addField("Highest Streak", body.player.stats.Pit.pit_stats_ptl.max_streak || "0", true)
-.setFooter("We're adding more!")
+.setFooter(offon)
 
 //.addField("", body.player.stats.Pit.pit_stats_ptl. || "0", true)
 
