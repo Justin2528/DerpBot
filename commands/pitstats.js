@@ -19,9 +19,11 @@ snekfetch.get(url).then(r => {
 let body = r.body
 
 let offon = "Player is offline!"
+let photo = "https://images-ext-1.discordapp.net/external/UdWXoKUsaYCOyvH6nsDk03AdfJVWTK7cyQVvhqpoF3I/https/image.ibb.co/hwheRV/image.png"
 
 if(body.player.lastLogout < body.player.lastLogin){
   offon = "Player is online!"
+  photo = "https://images-ext-1.discordapp.net/external/74xyeTgd4BElwkkoe92yB3zEwD1ln4N1rh2zeKxVwt8/https/image.ibb.co/h9VNfq/image.png"
 } 
 
 if(!body.player.stats.Pit) return message.channel.send(`ERROR 404: Uh, ${IGN} never player pit? (hypixel pit)`)
@@ -61,7 +63,7 @@ let ok = new Discord.RichEmbed()
 .addField("Melee Damage received", body.player.stats.Pit.pit_stats_ptl.melee_damage_received || "0", true)
 .addField("Deaths", body.player.stats.Pit.pit_stats_ptl.deaths || "0", true)
 .addField("Highest Streak", body.player.stats.Pit.pit_stats_ptl.max_streak || "0", true)
-.setFooter(offon)
+.setFooter(offon, photo)
 
 //.addField("", body.player.stats.Pit.pit_stats_ptl. || "0", true)
 
