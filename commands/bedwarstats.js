@@ -41,12 +41,17 @@ let ok = new Discord.RichEmbed()
 .setDescription(`${IGN}'s Bedwars stats`)
 .setImage(image)
 .addField("EXP", body.player.stats.Bedwars.Experience || "0", true)
-.addField("Kills (Overall)", body.player.stats.Bedwars.kills_bedwars|| "0", true)
-.addField("Deaths (Overall)", body.player.stats.Bedwars.deaths_bedwars|| "0", true)
+.addField("Level", body.player.achievements.bedwars_level)
+.addField("Games Played", body.player.stats.Bedwars.games_played_bedwars || "0", true)
+.addField("Beds Broken", body.player.stats.Bedwars.beds_broken_bedwars || "0", true)
+.addField("Beds Lost", body.player.stats.Bedwars.beds_lost_bedwars || "0", true)
+.addField("Kills (Overall)", body.player.stats.Bedwars.kills_bedwars || "0", true)
+.addField("Final Kills", body.player.stats.Bedwars.final_kills_bedwars || "0", true)
+.addField("Deaths (Overall)", body.player.stats.Bedwars.deaths_bedwars || "0", true)
 .setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/BedWars-64.png")
 .setFooter(offon, photo)
 
-//.addField("", body.player.stats.Bedwars.|| "0", true)
+//.addField("", body.player.stats.Bedwars. || "0", true)
 
 //Ok LOL
 
