@@ -3,6 +3,9 @@ const YTDL = require("ytdl-core")
 const Discord = require("discord.js");
 const send = require("quick.hook");
 const bot = new Discord.Client({disableEveryone: true});
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.APITOK, bot);
+
 let prefix = botconfig.prefix
 require("./util/eventHandler")(bot);
 
@@ -83,6 +86,11 @@ if (message.channel.type === "dm") return message.channel.send("Sorry to tell yo
   let messageArray = message.content.split(" ")
   let cmd  = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
+
+dbl.getVotes().then(votes => {
+    let channel = "547776018933612566";
+     channel.send(`${votes} voted!`)
+});
 
         
     
