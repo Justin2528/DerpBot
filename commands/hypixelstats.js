@@ -74,7 +74,7 @@ let ok = new Discord.RichEmbed()
 .addField("Rank", body.player.newPackageRank || "NON", true)
 .addField("Network EXP", body.player.networkExp || "0", true)
 .addField("Karma", body.player.karma || "0", true)
-//next: rankPlusColor || not a MVP
+.addField("Rank + (PLUS) Color", body.player.rankPlusColor || "NOPE", true)
 //.addField("Most Recent Game Type", body.player.mostRecentGameType || "NONE", true)
 .addField("Known Aliases", body.player.knownAliases || "NONE", true)
 .setFooter(offon, photo)
