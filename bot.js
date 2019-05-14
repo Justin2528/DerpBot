@@ -87,9 +87,11 @@ if (message.channel.type === "dm") return message.channel.send("Sorry to tell yo
   let cmd  = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
 
-dbl.getVotes().then(votes => {
-    var voteC = bot.channels.get("573054179002548234");
-   voteC.send(`${votes} voted!`)
+
+
+dbl.isWeekend().then(weekend => {
+ var notC = bot.channels.get("573054179002548234");
+    if (weekend) notC.send("Woo! Multiplier time!")
 });
 
         
