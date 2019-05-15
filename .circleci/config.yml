@@ -14,7 +14,7 @@ jobs:
 
     steps:
      - run: node --version
-      - checkout
+     - checkout
 
 
       # Download and cache dependencies
