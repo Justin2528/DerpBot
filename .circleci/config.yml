@@ -1,20 +1,21 @@
 version: 2
-jobs: npm
-  build: npm
-    docker: npm
+jobs: 
+  build: 
+    docker: 
       # specify the version you desire here
      # - image: circleci/node:7.10
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+      
 
-    working_directory: Justin2528/DerpBot
+
 
     steps:
+     - run: node --version
       - checkout
-machine: linux
+
 
       # Download and cache dependencies
       - restore_cache:
@@ -31,4 +32,4 @@ machine: linux
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: node test.js
+      - run: npm test
