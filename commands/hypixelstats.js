@@ -71,6 +71,7 @@ let ok = new Discord.RichEmbed()
 .addField("Last Login", date1, true)
 .addField("Last Logout", date3, true)
 .addField("Display Name", body.player.displayname || "0", true)
+.addField("Package Rank", body.player.newPackageRank || "NON", true)
 .addField("Speical Rank", body.player.rank || "NOPE", true)
 
 .addField("Network EXP", body.player.networkExp || "0", true)
