@@ -17,7 +17,7 @@ const snekfetch = require("snekfetch");
 
 snekfetch.get(url).then(r => {
 let body = r.body
-
+if(!body.player.displayname) return message.channel.send("ERROR 404: Uh... UhHHeawewaehwaje")
 let offon = `${body.player.displayname} is offline!`
 let photo = "https://images-ext-1.discordapp.net/external/UdWXoKUsaYCOyvH6nsDk03AdfJVWTK7cyQVvhqpoF3I/https/image.ibb.co/hwheRV/image.png"
 
@@ -31,6 +31,7 @@ if(!body.player) return message.channel.send(`ERROR 404: Nopeee`)
 
 if(!body.player.lastLogin) return message.channel.send("101 NOPE");
 if(!body.player.firstLogin) return message.channel.send("NOPE");
+if(!body.player.displa
 
 var dateString1 = body.player.lastLogin
 var currentTime1 = new Date(parseInt(dateString1 ));
