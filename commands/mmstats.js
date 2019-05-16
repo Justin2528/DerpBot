@@ -18,11 +18,11 @@ const snekfetch = require("snekfetch");
 snekfetch.get(url).then(r => {
 let body = r.body
 
-let offon = `${body.player.displayName} is offline!`
+let offon = `${body.player.displayname} is offline!`
 let photo = "https://images-ext-1.discordapp.net/external/UdWXoKUsaYCOyvH6nsDk03AdfJVWTK7cyQVvhqpoF3I/https/image.ibb.co/hwheRV/image.png"
 
 if(body.player.lastLogout < body.player.lastLogin){
-  offon = `${body.player.displayName} is online!`
+  offon = `${body.player.displayname} is online!`
   photo = "https://images-ext-1.discordapp.net/external/74xyeTgd4BElwkkoe92yB3zEwD1ln4N1rh2zeKxVwt8/https/image.ibb.co/h9VNfq/image.png"
 } 
 
@@ -39,7 +39,7 @@ console.log(body)
 let ok = new Discord.RichEmbed()
 .setTitle("Murder Mystery stats (Hypixel)")
 .setColor("9b7653")
-.setDescription(`${body.player.displayName}'s Murder Mystery stats`)
+.setDescription(`${body.player.displayname}'s Murder Mystery stats`)
 .setImage(image)
 .addField("Wins (Overall)", body.player.stats.MurderMystery.wins || "0", true)
 .setFooter(offon, photo)
