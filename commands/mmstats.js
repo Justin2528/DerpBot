@@ -40,7 +40,7 @@ let ok = new Discord.RichEmbed()
 .setColor("9b7653")
 .setDescription(`${IGN}'s Murder Mystery stats`)
 .setImage(image)
-
+.addField("Wins (Overall)", body.player.stats.MurderMystery.wins || "0", true)
 .setFooter(offon, photo)
 
 //.addField("", body.player.stats.MurderMystery. || "0", true)
