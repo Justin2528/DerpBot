@@ -18,11 +18,11 @@ const snekfetch = require("snekfetch");
 snekfetch.get(url).then(r => {
 let body = r.body
 
-let offon = `${IGN} is offline!`
+let offon = `${body.player.displayName} is offline!`
 let photo = "https://images-ext-1.discordapp.net/external/UdWXoKUsaYCOyvH6nsDk03AdfJVWTK7cyQVvhqpoF3I/https/image.ibb.co/hwheRV/image.png"
 
 if(body.player.lastLogout < body.player.lastLogin){
-  offon = `${IGN} is online!`
+  offon = `${body.player.displayName} is online!`
   photo = "https://images-ext-1.discordapp.net/external/74xyeTgd4BElwkkoe92yB3zEwD1ln4N1rh2zeKxVwt8/https/image.ibb.co/h9VNfq/image.png"
 } 
 
@@ -64,7 +64,7 @@ console.log(body)
 let ok = new Discord.RichEmbed()
 .setTitle("Hypixel stats (Minecraft Server)")
 .setColor("9b7653")
-.setDescription(`${IGN}'s Hypixel stats`)
+.setDescription(`${body.player.displayName}'s Hypixel stats`)
 .setImage(image)
 .setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/platform-pc.png")
 .addField("First Login", date2, true)
