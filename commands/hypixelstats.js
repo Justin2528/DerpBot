@@ -59,7 +59,11 @@ var date3 = day3 + "/" + month3 + "/" + year3;
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png";
 
-let here = `[Click me!](body.player.socialMedia.links.HYPIXEL)`;
+ let here = `[Click me!](body.player.socialMedia.links.HYPIXEL)`;
+
+if(!body.player.socialMedia.links.HYPIXEL){
+  here = `NOPE`
+}
 
 console.log(body)
 
