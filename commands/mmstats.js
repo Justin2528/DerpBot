@@ -29,7 +29,7 @@ if(body.player.lastLogout < body.player.lastLogin){
 
 if(!body.player.stats.Bedwars) return message.channel.send(`ERROR 404: Uh, ${IGN} never player bedwars? (hypixel bewars)`)
 
-
+let image101 = require("../images/MurderMystery-64.png")
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 
@@ -41,7 +41,7 @@ let ok = new Discord.RichEmbed()
 .setColor("9b7653")
 .setDescription(`${body.player.displayname}'s Murder Mystery stats`)
 .setImage(image)
-.setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/MurderMystery-64.png")
+.setThumbnail(image101)
 .addField("Bow Kills (Overall)", body.player.stats.MurderMystery.bow_kills || "0", true)
 .addField("Knife Kills (Overall)", body.player.stats.MurderMystery.knife_kills || "0", true)
 .addField("Thrown Knife kills", body.player.stats.MurderMystery.thrown_knife_kills || "0", true)
