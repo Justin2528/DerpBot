@@ -44,6 +44,7 @@ let ok = new Discord.RichEmbed()
 .addField("Bow Kills (Overall)", body.player.stats.MurderMystery.bow_kills || "0", true)
 .addField("Knife Kills (Overall)", body.player.stats.MurderMystery.knife_kills || "0", true)
 .addField("Thrown Knife kills", body.player.stats.MurderMystery.thrown_knife_kills || "0", true)
+.addField("Trap Kills", body.player.stats.MurderMystery.trap_kills || "0", true)
 .addField("Wins (Overall)", body.player.stats.MurderMystery.wins || "0", true)
 .setFooter(offon, photo)
 
