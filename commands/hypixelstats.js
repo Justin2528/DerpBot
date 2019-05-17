@@ -75,12 +75,12 @@ let ok = new Discord.RichEmbed()
 .addField("Display Name", body.player.displayname || "0", true)
 .addField("Package Rank", body.player.newPackageRank || "NON", true)
 .addField("Speical Rank", body.player.rank || "NOPE", true)
-
 .addField("Network EXP", body.player.networkExp || "0", true)
 .addField("Karma", body.player.karma || "0", true)
 .addField("Rank + (PLUS) Color", body.player.rankPlusColor || "NOPE", true)
 .addField("Most Recent Game Type", body.player.mostRecentGameType || "NONE", true)
 .addField("Known Aliases", body.player.knownAliases || "NONE", true)
+.addField("Hypixel Forums", body.player.socialMedia.links.HYPIXEL)
 .setFooter(offon, photo)
 
 
