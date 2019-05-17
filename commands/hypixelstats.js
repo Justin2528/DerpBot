@@ -31,7 +31,7 @@ if(!body.player) return message.channel.send(`ERROR 404: Nopeee`)
 
 if(!body.player.lastLogin) return message.channel.send("101 NOPE");
 if(!body.player.firstLogin) return message.channel.send("NOPE");
-if(!body.player.displa
+
 
 var dateString1 = body.player.lastLogin
 var currentTime1 = new Date(parseInt(dateString1 ));
