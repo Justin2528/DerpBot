@@ -59,20 +59,7 @@ var date3 = day3 + "/" + month3 + "/" + year3;
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png";
 
-let here = "NOPE"
 
-
- if(!body.player.socialMedia){
-   here = "NOPE"
-}
-
-if(!body.player.socialMedia.links){
-  here = "NOPE"
-}
-
-if(body.player.socialMedia.links.HYPIXEL){
-  here = body.player.socialMedia.links.HYPIXEL
-}
 
 console.log(body)
 
@@ -93,7 +80,7 @@ let ok = new Discord.RichEmbed()
 .addField("Rank + (PLUS) Color", body.player.rankPlusColor || "NOPE", true)
 .addField("Most Recent Game Type", body.player.mostRecentGameType || "NONE", true)
 .addField("Known Aliases", body.player.knownAliases || "NONE", true)
-.addField("Hypixel Forums", here || "NONE", true)
+// .addField("Hypixel Forums", here || "NONE", true)
 .setFooter(offon, photo)
 
 
