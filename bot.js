@@ -37,7 +37,7 @@ fs.readdir("./commands/", (err, files) => {
 
     if(err) console.log(err)
     
- dbl.isWeekend().then(weekend => {
+
 
     
     let jsfile = files.filter(f => f.split(".").pop() === "js")
