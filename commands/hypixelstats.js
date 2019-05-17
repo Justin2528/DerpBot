@@ -59,17 +59,21 @@ var date3 = day3 + "/" + month3 + "/" + year3;
 
 let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png";
 
- let here = body.player.socialMedia.links.HYPIXEL;
+let here = "NOPE"
+
 
  if(!body.player.socialMedia){
-  here = "NOPE"
+   here = "NOPE"
 }
 
 if(!body.player.socialMedia.links){
   here = "NOPE"
 }
 if(!body.player.socialMedia.links.HYPIXEL){
-  here = "NOPE"
+   here = "NOPE"
+}
+if(body.player.socialMedia.links.HYPIXEL){
+  here = body.player.socialMedia.links.HYPIXEL
 }
 
 console.log(body)
