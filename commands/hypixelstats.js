@@ -80,7 +80,7 @@ let ok = new Discord.RichEmbed()
 .addField("Rank + (PLUS) Color", body.player.rankPlusColor || "NOPE", true)
 .addField("Most Recent Game Type", body.player.mostRecentGameType || "NONE", true)
 .addField("Known Aliases", body.player.knownAliases || "NONE", true)
-.addField("Hypixel Forums", body.player.socialMedia.links.HYPIXEL)
+.addField("Hypixel Forums", body.player.socialMedia.links.HYPIXEL || "NONE", true)
 .setFooter(offon, photo)
 
 
