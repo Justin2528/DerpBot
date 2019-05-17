@@ -69,9 +69,7 @@ let here = "NOPE"
 if(!body.player.socialMedia.links){
   here = "NOPE"
 }
-if(!body.player.socialMedia.links.HYPIXEL){
-   here = "NOPE"
-}
+
 if(body.player.socialMedia.links.HYPIXEL){
   here = body.player.socialMedia.links.HYPIXEL
 }
