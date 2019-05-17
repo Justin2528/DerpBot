@@ -37,7 +37,10 @@ fs.readdir("./commands/", (err, files) => {
 
     if(err) console.log(err)
     
- 
+ dbl.isWeekend().then(weekend => {
+ var notC = bot.channels.get("578967828905066508");
+    if (weekend) notC.send("Woo! Multiplier time!")
+});
     
     let jsfile = files.filter(f => f.split(".").pop() === "js")
     if(jsfile.length <= 0) {
@@ -89,10 +92,7 @@ if (message.channel.type === "dm") return message.channel.send("Sorry to tell yo
 
 
 
-dbl.isWeekend().then(weekend => {
- var notC = bot.channels.get("573054179002548234");
-    if (weekend) notC.send("Woo! Multiplier time!")
-});
+
 
         
     
