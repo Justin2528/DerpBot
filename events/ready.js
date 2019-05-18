@@ -2,13 +2,15 @@ const Discord = require("discord.js");
 const DBL = require("dblapi.js");
 const bot = new Discord.Client();
 const dbl = new DBL(process.env.APITOK, bot);
-
+const BFDAPI = require("bfdapi.js");
 
 
 module.exports = bot => {
 //    bot.user.setActivity("derp>help - DerpBot");
 
-   
+         const bfd = new BFDAPI(bot,process.env.BFD);
+
+
       let statuses = [
          `d>help - DerpBot`,
          `Partner of EDGE! - DerpBot`,
@@ -26,5 +28,7 @@ module.exports = bot => {
 			dbl.postStats(bot.guilds.size,bot.shard.id,bot.shard.count);
 		}, 100000)
 
-
-}
+		setInterval(() => {
+			      bfd.on("post",(count)=>console.log(`Posted guild count: ${count}`));
+		}, 100000)
+}	
