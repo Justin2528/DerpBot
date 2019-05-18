@@ -27,7 +27,7 @@ if(body.player.lastLogout < body.player.lastLogin){
 } 
 
 
-if(!body.player.stats.Skywars) return message.channel.send(`ERROR 404: Uh, ${IGN} never player bedwars? (hypixel bewars)`)
+if(!body.player.stats.Skywars) return message.channel.send(`ERROR 404: Uh, ${IGN} never player skywars? (hypixel skywars)`)
 
 
 
@@ -44,7 +44,7 @@ let ok = new Discord.RichEmbed()
 .setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/MurderMystery-64.png")
 .setFooter(offon, photo)
 
-//.addField("", body.player.stats.MurderMystery. || "0", true)
+//.addField("", body.player.stats.Skywars. || "0", true)
 
 //Ok LOL
 
