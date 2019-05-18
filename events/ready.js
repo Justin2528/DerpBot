@@ -26,7 +26,4 @@ const dbl = new DBL(process.env.APITOK, bot);
 			dbl.postStats(bot.guilds.size,bot.shard.id,bot.shard.count);
 		}, 100000)
 
-// 		setInterval(() => {
-// 			      bfd.on("post",(count)=>console.log(`Posted guild count: ${count}`));
-// 		}, 100000)
 }	
