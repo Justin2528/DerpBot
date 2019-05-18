@@ -56,7 +56,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
  bot.on("guildCreate", guild => {
-    const liveJoin = bot.channels.get("547776018933612566"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveJoin = bot.channels.get("579190507780177941"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveJEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`Your Bot Has Started Serving A Guild`)
@@ -67,7 +67,7 @@ fs.readdir("./commands/", (err, files) => {
     })
  });
  bot.on("guildDelete", guild => {
-    const liveLeave = bot.channels.get("547776018933612566"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
+    const liveLeave = bot.channels.get("579190507780177941"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveLEmbed = new Discord.RichEmbed()
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`Your Bot Has Stopped Serving A Guild`)
