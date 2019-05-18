@@ -12,7 +12,7 @@ require("./util/eventHandler")(bot);
      
 var servers = {};
 
-
+ewa
 
 function play(connection, message) {
     var server = servers[message.guild.id];
