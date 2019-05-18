@@ -27,7 +27,7 @@ if(body.player.lastLogout < body.player.lastLogin){
 } 
 
 
-if(!body.player.stats.Skywars) return message.channel.send(`ERROR 404: Uh, ${IGN} never player skywars? (hypixel skywars)`)
+if(!body.player.stats.SkyWars) return message.channel.send(`ERROR 404: Uh, ${IGN} never player skywars? (hypixel skywars)`)
 
 
 
@@ -37,15 +37,15 @@ let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 console.log(body)
 
 let ok = new Discord.RichEmbed()
-.setTitle("Skywars stats (Hypixel)")
+.setTitle("SkyWars stats (Hypixel)")
 .setColor("9b7653")
-.setDescription(`${body.player.displayname}'s Skywars stats`)
+.setDescription(`${body.player.displayname}'s SkyWars stats`)
 .setImage(image)
-.addField("Coins", body.player.stats.Skywars.coins || "0", true)
+.addField("Coins", body.player.stats.SkyWars.coins || "0", true)
 .setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/Skywars-64.png")
 .setFooter(offon, photo)
 
-//.addField("", body.player.stats.Skywars. || "0", true)
+//.addField("", body.player.stats.SkyWars. || "0", true)
 
 //Ok LOL
 
