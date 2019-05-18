@@ -8,6 +8,8 @@ const bot = new Discord.Client();
 module.exports = bot => {
 //    bot.user.setActivity("derp>help - DerpBot");
 const dbl = new DBL(process.env.APITOK, bot);
+ const bfd = new BFDAPI(bot,process.env.BFD);
+
         
 
 
