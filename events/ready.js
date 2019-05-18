@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const DBL = require("dblapi.js");
 const bot = new Discord.Client();
+ const BFDAPI = require("bfdapi.js");
+  const bfd = new BFDAPI(bot,process.env.BFD);
 
 
 module.exports = bot => {
