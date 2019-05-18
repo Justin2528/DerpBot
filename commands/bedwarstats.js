@@ -64,7 +64,7 @@ module.exports.config = {
   name: "bedwarstats",
   aliases: ["Bed?"],
   description: "yay bedwars (hypixel)",
-  usage: "d>bed <IGN>",
+  usage: "d>bedwarstats <IGN>",
   noalias: "No Aliases",
   accessableby: "memberssssss/giraffe/pitboi/Justin2528/duh"
 }
