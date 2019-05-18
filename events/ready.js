@@ -2,12 +2,12 @@ const Discord = require("discord.js");
 const DBL = require("dblapi.js");
 const bot = new Discord.Client();
 const dbl = new DBL(process.env.APITOK, bot);
-const BFDAPI = require("bfdapi.js");
-const snekfetch = require("snekfetch")
+
+
 
 module.exports = bot => {
 //    bot.user.setActivity("derp>help - DerpBot");
-      const bfd = new BFDAPI(bot,process.env.BFD);
+
    
       let statuses = [
          `d>help - DerpBot`,
