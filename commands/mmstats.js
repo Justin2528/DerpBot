@@ -65,7 +65,7 @@ module.exports.config = {
   name: "mmstats",
   aliases: ["Murder u"],
   description: "Oof murder mystery (hypixel)",
-  usage: "d>bed <IGN>",
+  usage: "d>mmstats <IGN>",
   noalias: "No Aliases",
   accessableby: "memberssssss/giraffe/pitboi/Justin2528/duh"
 }
