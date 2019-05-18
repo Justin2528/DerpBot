@@ -23,7 +23,7 @@ const dbl = new DBL(process.env.APITOK, bot);
    }, 12000)
 
 		setInterval(() => {
-			dbl.postStats(bot.guilds.size,bot.shard.id,bot.shard.count);
+			dbl.postStats(bot.guilds.size);
 		}, 100000)
 
 }	
