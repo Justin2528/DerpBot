@@ -82,6 +82,7 @@ bot.on('disconnect', function(erMsg) {
 	let code = erMsg.code;
       var notC = bot.channels.get("579189609305735168");
 	notC.send('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');
+bot.destroy().then(bot.login(process.env.TOKEN));
 });
 
 
