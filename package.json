@@ -33,7 +33,8 @@
     "opusscript": "0.0.6",
     "snekfetch": "^4.0.4",
     "string-similarity": "^3.0.0",
-    "superagent": "^4.0.0-beta.5"
+    "superagent": "^4.0.0-beta.5",
+    "bfdapi.js": "1.1.2"
 
   }
 }
