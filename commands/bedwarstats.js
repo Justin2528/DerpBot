@@ -26,7 +26,7 @@ if(body.player.lastLogout < body.player.lastLogin){
 } 
 
 
-if(!body.player.stats.Bedwars) return message.channel.send(`ERROR 404: Uh, ${IGN} never player bedwars? (hypixel bewars)`)
+if(!body.player.stats.Bedwars) return message.channel.send(`ERROR 404: Uh, ${IGN} never player bedwars? (hypixel bedwars)`)
 
 
 
