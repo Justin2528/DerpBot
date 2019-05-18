@@ -22,10 +22,15 @@ const dbl = new DBL(process.env.APITOK, bot);
    
 
 
+
    }, 12000)
 
 		setInterval(() => {
 			dbl.postStats(bot.guilds.size);
+		}, 100000)
+		
+			setInterval(() => {
+			      bfd.on("post",(count)=>console.log(`Posted guild count: ${count}`));
 		}, 100000)
 
 }	
