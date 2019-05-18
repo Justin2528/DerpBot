@@ -45,7 +45,9 @@ let ok = new Discord.RichEmbed()
 .addField("Souls", body.player.stats.SkyWars.souls || "0", true)
 .addField("Tokens", body.player.stats.SkyWars.cosmetic_tokens || "0", true)
 .addField("Wins", body.player.stats.SkyWars.wins || "0", true)
-
+.addField("Losses", body.player.stats.SkyWars.losses || "0", true)
+.addField("Kills", body.player.stats.SkyWars.kills || "0", true)
+.addField("Assists", body.player.stats.SkyWars.assists || "0", true)
 .setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/Skywars-64.png")
 .setFooter(offon, photo)
 
