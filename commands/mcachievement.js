@@ -24,7 +24,7 @@ module.exports.config = {
   name: "mcachievement",
   aliases: ["MC"],
   description: "Minecraft Achievement Generator I guess lol",
-  usage: "d>mcachievement <Title> <Text>",
+  usage: "d>mcachievement <Title>|(Must add | if you want to add text)<Text>",
   noalias: "No Aliases",
   accessableby: "Members"
 }
