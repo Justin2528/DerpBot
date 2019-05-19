@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   
   if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead!`);
 if(args[0] == "cool") return message.channel.send("No such command call `cool`");
-    if(args[0] == "games"){
+    if(args[0] == "fun"){
         let gembed = new Discord.RichEmbed()
     .setAuthor("Help Command!", message.guild.iconURL)
     .setColor("RANDOM")
@@ -20,7 +20,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Games || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Games`, "minesweeper")
+    .addField(`Fun commands`, " `minesweeper` `mcachievement` `yesorno` `quiz` `meme` `cat` `dog` `1vs1`")
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
      message.channel.send(gembed).then(m => m.delete(10000));
     return message.author.send(Gembed);
@@ -90,7 +90,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `unban` `kick` `ping` `uptime` `???` `yesorno` `meme` `purge` `eval` `reload` `cat` `dog` `minesweeper` `invite` `npm` `1vs1` `vote`")
+    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `unban` `kick` `ping` `uptime` `???``purge` `eval` `reload` `invite` `npm` `vote`")
     .addField(`Psst!`, `Do d>help games for games!`)
     .addField(`Are you a tester?`, `Do d>help beta for some commands that are not release!`)
 .addField("Hypixel stats?", `Do d>help hypixel!`)
