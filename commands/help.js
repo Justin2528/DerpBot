@@ -43,6 +43,24 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
      message.channel.send(eembed).then(m => m.delete(10000));
     return message.author.send(Bembed);
     }
+   if(args[0] == "thehive"){
+        let heeembed = new Discord.RichEmbed()
+    .setAuthor("Help Command!", message.guild.iconURL)
+    .setColor("RANDOM")
+    .setDescription(`${message.author.username} check your DMs! 📬`)
+    
+    let HIembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`DerpBot Help`, message.guild.iconURL)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`The Hive Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .addField(`Commands`,' `thehivestats`')
+    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
+        .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
+     message.channel.send(heeembed).then(m => m.delete(10000));
+    return message.author.send(HIembed);
+    }
 if(args[0] == "staff"){
         let membed = new Discord.RichEmbed()
     .setAuthor("Help Command!", message.guild.iconURL)
@@ -115,6 +133,7 @@ if(args[0] == "staff"){
     .addField("You're a staff?", 'Do d>help staff!')
 
 .addField("Hypixel stats?", `Do d>help hypixel!`)
+.addField("Uh, the hive stats?", `Do d>help thehive!`)
   
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
