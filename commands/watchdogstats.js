@@ -15,10 +15,11 @@ snekfetch.get(url).then(r => {
 
     let ok = new Discord.RichEmbed()
    .setAuthor("Hypixel WatchDog Statistics")
-   .addField("**Total Bans**", `Bans: \`${oke}\` \n WatchDog Bans: \`${body.watchdog_total}\` \n Staff Bans: \`${body.staff_total}\``)
-  .addField("**Todays Bans**", `WatchDog Bans: \`${body.watchdog_rollingDaily}\` \n Staff Bans: \`${body.staff_rollingDaily}\` \n Last Minute: \`${body.watchdog_lastMinute}\``)
+    .setColor("RED")
+   .addField("**Total Bans**", `Bans: \`${oke}\` \n WatchDog Bans: \`${body.watchdog_total}\` \n Staff Bans: \`${body.staff_total}\``, true)
+  .addField("**Todays Bans**", `WatchDog Bans: \`${body.watchdog_rollingDaily}\` \n Staff Bans: \`${body.staff_rollingDaily}\` \n Last Minute: \`${body.watchdog_lastMinute}\``, true)
     .setThumbnail("https://vignette.wikia.nocookie.net/hypixelserver/images/9/94/Watchdog.png")
-    .setFooter("Wow...")
+    .setFooter("Don't think Watchdog is weak!")
 
 message.channel.send(ok)
     
