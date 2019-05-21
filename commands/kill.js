@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
      if(!args[0]) return message.reply("Incorrect Usage! d>!kill <folks>")
 
-if(args[0] == "Derpbot" || "derpbot"){
+if(args[0] == "derpbot"){
    return message.channel.send("Am unkillable")
 }
 
