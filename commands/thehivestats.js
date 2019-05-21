@@ -28,7 +28,7 @@ if(body.lastLogout < body.lastLogin){
 } 
 
 
-
+if(!body.username) return message.channel.send("ERROR 404: 100% nope") 
 
 
 
