@@ -32,7 +32,7 @@ if(body.lastLogout < body.lastLogin){
 
 
 
-let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
+let image = "https://visage.surgeplay.com/full/" + body.UUID +".png"
 
 
 console.log(body)
