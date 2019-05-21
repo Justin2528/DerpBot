@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(`**Permanent Invite Link**: ${invite}`);
     message.channel.send(embed);
   });
-}
+
 }
 
 
