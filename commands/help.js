@@ -43,6 +43,24 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
      message.channel.send(eembed).then(m => m.delete(10000));
     return message.author.send(Bembed);
     }
+if(args[0] == "staff"){
+        let membed = new Discord.RichEmbed()
+    .setAuthor("Help Command!", message.guild.iconURL)
+    .setColor("RANDOM")
+    .setDescription(`${message.author.username} check your DMs! 📬`)
+    
+    let STembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`DerpBot Help`, message.guild.iconURL)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`Staff Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .addField(`Commands`,' `mute` `ban` `softban` `unban` `purge`')
+    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
+        .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
+     message.channel.send(membed).then(m => m.delete(10000));
+    return message.author.send(STembed);
+    }
 
     if(args[0] == "hypixel"){
         let hembed = new Discord.RichEmbed()
@@ -90,10 +108,14 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `mute` `ban` `softban` `unban` `kick` `ping` `uptime` `???``purge` `eval` `reload` `invite` `npm` `vote`")
+    .addField("Note:", "eval and reload can be use my bot owner. So uh just look at them and do nothing.")
+    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `kick` `ping` `uptime` `???` (`eval` `reload`) `invite` `npm` `vote`")
     .addField(`Psst!`, `Do d>help games for games!`)
     .addField(`Are you a tester?`, `Do d>help beta for some commands that are not release!`)
+    .addField("You're a staff?", 'Do d>help staff!')
+
 .addField("Hypixel stats?", `Do d>help hypixel!`)
+  
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
     message.author.send(Sembed);
