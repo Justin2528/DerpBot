@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission("CREATE_INSTANT_INVITE")) return message.channel.send("Nope");
   message.channel.createInvite({maxAge: 0}).then(invite => {
     let embed = new Discord.RichEmbed()
-    .setColor(color)
+    .setColor("GREEN")
     .setDescription(`**Permanent Invite Link**: ${invite}`);
     message.channel.send(embed);
   });
