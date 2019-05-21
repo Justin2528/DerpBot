@@ -11,7 +11,7 @@ const snekfetch = require("snekfetch");
 snekfetch.get(url).then(r => {
     let body = r.body
 
-    let oke = body.watchdog_total+body.staff.total
+    let oke = body.watchdog_total+body.staff_total
 
     let ok = new Discord.RichEmbed()
    .setAuthor("Hypixel WatchDog Statistics")
