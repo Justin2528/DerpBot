@@ -14,7 +14,7 @@ snekfetch.get(url).then(r => {
     let oke = body.watchdog_total+body.staff_total
 
     let ok = new Discord.RichEmbed()
-   .setAuthor("Hypixel WatchDog Statistics")
+   .setAuthor("Hypixel WatchDog Statistics", "https://images-ext-1.discordapp.net/external/KiCZjFl7Ph0aD0Sy3-1EAADDbRLE8k6NayWFH6olu5o/%3Fs%3D200%26v%3D4/https/avatars0.githubusercontent.com/u/3840546")
     .setColor("RED")
    .addField("**Total Bans**", `Bans: \`${oke}\` \n WatchDog Bans: \`${body.watchdog_total}\` \n Staff Bans: \`${body.staff_total}\``, true)
   .addField("**Todays Bans**", `WatchDog Bans: \`${body.watchdog_rollingDaily}\` \n Staff Bans: \`${body.staff_rollingDaily}\` \n Last Minute: \`${body.watchdog_lastMinute}\``, true)
