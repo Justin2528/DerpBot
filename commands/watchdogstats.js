@@ -15,8 +15,8 @@ snekfetch.get(url).then(r => {
 
     let ok = new Discord.RichEmbed()
    .setAuthor("Hypixel WatchDog Statistics")
-   .addField("**Total Bans**", `Bans: `${oke}` \n WatchDog Bans: `${body.watchdog_total}` \n Staff Bans: `${body.staff_total}``)|
-  .addField("**Todays Bans**", `WatchDog Bans: `${watchdog_rollingDaily}` \n Staff Bans: `${staff_rollingDaily}` \n Last Minute: `${watchdog_lastMinute}``)
+   .addField("**Total Bans**", `Bans: \`${oke}\` \n WatchDog Bans: \`${body.watchdog_total}\` \n Staff Bans: \`${body.staff_total}\``)
+  .addField("**Todays Bans**", `WatchDog Bans: \`${body.watchdog_rollingDaily}\` \n Staff Bans: \`${body.staff_rollingDaily}\` \n Last Minute: \`${body.watchdog_lastMinute}\``)
     .setThumbnail("https://vignette.wikia.nocookie.net/hypixelserver/images/9/94/Watchdog.png")
     .setFooter("Wow...")
 
