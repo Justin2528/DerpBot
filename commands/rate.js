@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
    if(result == 21){
   return message.channel.send(`Rating: ${rateboi} is ∞/∞ 🌟}`)
 } else {
-    return message.channel.send(`Rating: ${rateboi} is ${result}/100}`)
+    return message.channel.send(`Rating: ${rateboi} is ${result}/100`)
 }
 
 }
