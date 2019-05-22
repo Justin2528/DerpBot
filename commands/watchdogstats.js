@@ -8,6 +8,8 @@ var url = "https://api.hypixel.net/watchdogstats?key=" + process.env.APIKEY
 const snekfetch = require("snekfetch");    
 
 
+
+
 snekfetch.get(url).then(r => {
     let body = r.body
 
@@ -21,7 +23,7 @@ snekfetch.get(url).then(r => {
     .setThumbnail("https://vignette.wikia.nocookie.net/hypixelserver/images/9/94/Watchdog.png")
     .setFooter("Don't think Watchdog is weak!", photo)
 
-message.channel.send(ok)
+return message.channel.send(ok)
     
    });
 }
