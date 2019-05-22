@@ -29,7 +29,7 @@ message.channel.send(ok)
 
 module.exports.config = {
   name: "watchdogstats",
-  aliases: [""],
+  aliases: ["watchdog"],
   description: "Uh get it?",
   usage: "d>watchdogstats",
   noalias: "No Aliases",
