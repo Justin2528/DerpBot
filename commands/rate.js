@@ -8,9 +8,9 @@ module.exports.run = async (bot, message, args) => {
   let rateboi = args.slice().join(" ");
 
    if(result == 21){
-  return message.channel.send(`Rating: ${rateboi} is ∞/∞ 🌟}`)
+  return message.channel.send(`Rating: (${rateboi})  ||∞/∞ 🌟||}`)
 } else {
-    return message.channel.send(`Rating: ${rateboi} is ${result}/100`)
+    return message.channel.send(`Rating: ${rateboi}  ||${result}/100||`)
 }
 
 }
