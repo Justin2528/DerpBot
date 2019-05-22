@@ -46,10 +46,10 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.config = {
-  name: "",
-  aliases: [""],
-  description: "",
-  usage: "",
+  name: "translate",
+  aliases: ["t"],
+  description: "Uh translate hello to something",
+  usage: "d>translate <lang> <text>",
   noalias: "No Aliases",
-  accessableby: ""
+  accessableby: "Members"
 }
