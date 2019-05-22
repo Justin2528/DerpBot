@@ -127,7 +127,7 @@ if(args[0] == "staff"){
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
     .addField("Note:", "eval and reload can be use my bot owner. So uh just look at them and do nothing.")
-    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `kick` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `createinvite`")
+    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `kick` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `createinvite` `weather`")
     .addField(`Psst!`, `Do d>help games for games!`)
     .addField(`Are you a tester?`, `Do d>help beta for some commands that are not release!`)
     .addField("You're a staff?", 'Do d>help staff!')
