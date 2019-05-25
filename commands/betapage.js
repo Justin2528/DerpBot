@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   //code here
 
-let pages = ['1', '2']
+let pages = ['1', '2', '3']
 let page = 1; 
  
   let embed = new Discord.RichEmbed() 
