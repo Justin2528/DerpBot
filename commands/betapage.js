@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   //code here
-  let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages'
+
 let pages = ['1', '2']
 let page = 1; 
  
@@ -35,7 +35,7 @@ let page = 1;
       })
      
       forwards.on('collect', r => { 
-     if (page === pages.length) return; 
+
         page++; 
        embed.addField("Memems stats", "here")
         embed.setDescription("Bam's stuff"); 
