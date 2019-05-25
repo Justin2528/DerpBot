@@ -65,6 +65,8 @@ let ok = new Discord.RichEmbed()
 .addField("Deaths", body.player.stats.Pit.pit_stats_ptl.deaths || "0", true)
 .addField("Highest Streak", body.player.stats.Pit.pit_stats_ptl.max_streak || "0", true)
 .addField("Night Quests Completed", body.player.stats.Pit.pit_stats_ptl.night_quests_completed || "0", true)
+.addField("Sewer Treasures Found", body.player.stats.Pit.pit_stats_ptl.sewer_treasures_found || "0", true)
+
 
 //.addField("", body.player.stats.Pit.pit_stats_ptl. || "0", true)
 
@@ -73,7 +75,7 @@ let ok2 = new Discord.RichEmbed()
 .setColor("9b7653")
 .setImage(image)
 .addField("Wheat Farmed", body.player.stats.Pit.pit_stats_ptl.wheat_farmed || "0", true)
-.addField("Sewer Treasures Found", body.player.stats.Pit.pit_stats_ptl.sewer_treasures_found || "0", true)
+.addField("Dark Pants Created", body.player.stats.Pit.pit_stats_ptl.dark_pants_crated || "0", true)
 .setFooter(offon, photo)
 
 message.channel.send(ok).then(message.channel.send(ok2));
