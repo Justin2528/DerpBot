@@ -35,7 +35,7 @@ let page = 1;
       })
      
       forwards.on('collect', r => { 
-
+     if (page === pages.length) return;   
         page++; 
        embed.addField("Memems stats", "here")
         embed.setDescription("Bam's stuff"); 
