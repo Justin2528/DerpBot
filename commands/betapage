@@ -3,9 +3,11 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   //code here
+  let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages'
+let pages = ['1', '2']
 let page = 1; 
  
-  const embed = new Discord.RichEmbed() 
+  let embed = new Discord.RichEmbed() 
     .setColor(0xffffff)
     .setaddField(`Pitstats here`, "Weeb") 
     .setDescription("Stuff's stats here")
@@ -33,7 +35,7 @@ let page = 1;
       })
      
       forwards.on('collect', r => { 
-
+     if (page === pages.length) return; 
         page++; 
        embed.addField("Memems stats", "here")
         embed.setDescription("Bam's stuff"); 
