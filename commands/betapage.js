@@ -9,7 +9,7 @@ let page = 1;
  
   let embed = new Discord.RichEmbed() 
     .setColor(0xffffff)
-    .setaddField(`Pitstats here`, "Weeb") 
+    .addField(`Pitstats here`, "Weeb") 
     .setDescription("Stuff's stats here")
     .setFooter("Online stuff")
  
