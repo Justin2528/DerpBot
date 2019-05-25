@@ -42,7 +42,6 @@ let ok = new Discord.RichEmbed()
 .setDescription(`${body.player.displayname}'s Pit stats`)
 .addField("XP", body.player.stats.Pit.profile.xp || "0", true)
 .addField("Play time (hour)", hours, true)
-.setImage(image)
 .addField("Enderchest open times", body.player.stats.Pit.pit_stats_ptl.enderchest_opened || "0", true)
 .addField("Joins", body.player.stats.Pit.pit_stats_ptl.joins || "0", true)
 .setThumbnail("https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/Prototype-64.png")
@@ -65,16 +64,20 @@ let ok = new Discord.RichEmbed()
 .addField("Melee Damage received", body.player.stats.Pit.pit_stats_ptl.melee_damage_received || "0", true)
 .addField("Deaths", body.player.stats.Pit.pit_stats_ptl.deaths || "0", true)
 .addField("Highest Streak", body.player.stats.Pit.pit_stats_ptl.max_streak || "0", true)
+
+
+//.addField("", body.player.stats.Pit.pit_stats_ptl. || "0", true)
+
+//Ok LOL
+let ok2 = new Discord.RichEmbed()
+.setColor("9b7653")
+.setImage(image)
 .addField("Wheat Farmed", body.player.stats.Pit.pit_stats_ptl.wheat_farmed || "0", true)
 .addField("Night Quests Completed", body.player.stats.Pit.pit_stats_ptl.night_quests_completed || "0", true)
 .addField("Sewer Treasures Found", body.player.stats.Pit.pit_stats_ptl.sewer_treasures_found || "0", true)
 .setFooter(offon, photo)
 
-//.addField("", body.player.stats.Pit.pit_stats_ptl. || "0", true)
-
-//Ok LOL
-
-message.channel.send(ok)
+message.channel.send(ok).then(message.channel.send(ok2));
 }) 
 }
 
