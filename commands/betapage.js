@@ -8,9 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
   let embed = new Discord.RichEmbed() 
     .setColor(0xffffff)
-    .addField(`Pitstats here`, "Weeb") 
-    .setDescription("Stuff's stats here")
-    .setFooter("Online stuff")
+
  
   message.channel.send(embed).then(msg => { 
    
@@ -29,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
        embed.addField("Pitstats", "here")
         embed.setDescription("Pitstats here"); 
         embed.setFooter(`Online stuff`); 
-        msg.edit(embed) 
+        return msg.edit(embed) 
       })
      
       forwards.on('collect', r => { 
@@ -37,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
        embed.addField("Memems stats", "here")
         embed.setDescription("Bam's stuff"); 
         embed.setFooter(`Offline sutff here`); 
-        msg.edit(embed) 
+        return msg.edit(embed) 
       })
    
     })
