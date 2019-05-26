@@ -4,9 +4,8 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   //code here
 
-let pages = ['1', '2', '3']
-let page = 1; 
- 
+
+
   let embed = new Discord.RichEmbed() 
     .setColor(0xffffff)
     .addField(`Pitstats here`, "Weeb") 
@@ -26,8 +25,7 @@ let page = 1;
      
       
       backwards.on('collect', r => { 
-        if (page === 1) return; 
-        page--; 
+
        embed.addField("Pitstats", "here")
         embed.setDescription("Pitstats here"); 
         embed.setFooter(`Online stuff`); 
@@ -35,8 +33,7 @@ let page = 1;
       })
      
       forwards.on('collect', r => { 
-     if (page === pages.length) return;   
-        page++; 
+
        embed.addField("Memems stats", "here")
         embed.setDescription("Bam's stuff"); 
         embed.setFooter(`Offline sutff here`); 
