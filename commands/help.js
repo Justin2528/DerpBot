@@ -55,7 +55,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`The Hive Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `thehivestats`')
+    .addField(`Commands`,' `hivemcstats`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
      message.channel.send(heeembed).then(m => m.delete(10000));
