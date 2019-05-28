@@ -59,10 +59,10 @@ message.channel.send(ok)
 
 
 module.exports.config = {
-  name: "thehivestats",
+  name: "hivestatsmc",
   aliases: ["Oof"],
   description: "I know what are you thinking",
-  usage: "d>thehivestats <IGN>",
+  usage: "d>hivemcstats <IGN>",
   noalias: "No Aliases",
   accessableby: "Rare people"
 }
