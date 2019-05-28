@@ -36,7 +36,7 @@ let image = "https://visage.surgeplay.com/full/" + body.player.uuid +".png"
 console.log(body)
 
 let ok = new Discord.RichEmbed()
-.setTitle("Bedwars stats (Hypixel)")
+.setTitle("Parkour stats (Hypixel)")
 .setColor("9b7653")
 .setDescription(`${body.player.displayname}'s Bedwars stats`)
 .setImage(image)
