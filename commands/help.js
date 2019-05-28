@@ -43,7 +43,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
      message.channel.send(eembed).then(m => m.delete(10000));
     return message.author.send(Bembed);
     }
-   if(args[0] == "thehive"){
+   if(args[0] == "hivemc"){
         let heeembed = new Discord.RichEmbed()
     .setAuthor("Help Command!", message.guild.iconURL)
     .setColor("RANDOM")
@@ -54,7 +54,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setAuthor(`DerpBot Help`, message.guild.iconURL)
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
-    .setDescription(`The Hive Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .setDescription(`HiveMC Commands || DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands`,' `hivemcstats`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
@@ -91,7 +91,7 @@ if(args[0] == "staff"){
     .setAuthor(`DerpBot Help`, message.guild.iconURL)
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
-    .setDescription(`Beta Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .setDescription(`Hypixel Commands || DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands`,' `pitstats (The first command that I created)` `watchdogstats` `hypixelstats` `bedwarstats` `mmstats (new! But it only got win. Am adding more)`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
@@ -133,7 +133,7 @@ if(args[0] == "staff"){
     .addField("⛏ You're a staff?", 'Do d>help staff!')
 
 .addField("Hypixel stats?", `Do d>help hypixel!`)
-.addField("Uh, the hive stats?", `Do d>help thehive!`)
+.addField("Uh, the hive stats?", `Do d>help hivemc!`)
   
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));
