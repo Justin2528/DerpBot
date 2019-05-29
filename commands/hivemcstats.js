@@ -65,5 +65,5 @@ module.exports.config = {
   description: "I know what are you thinking",
   usage: "d>hivemcstats <IGN>",
   noalias: "No Aliases",
-  accessableby: "Rare people"
+  accessableby: "Rare people" //
 }
