@@ -61,7 +61,7 @@ message.channel.send(ok)
 
 
 module.exports.config = {
-  name: "hivestatsmc",
+  name: "hivemcstats",
   aliases: ["Oof"],
   description: "I know what are you thinking",
   usage: "d>hivemcstats <IGN>",
