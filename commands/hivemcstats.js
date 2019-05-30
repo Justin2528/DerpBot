@@ -27,6 +27,7 @@ if(body.lastLogout < body.lastLogin){
   photo = "https://images-ext-1.discordapp.net/external/74xyeTgd4BElwkkoe92yB3zEwD1ln4N1rh2zeKxVwt8/https/image.ibb.co/h9VNfq/image.png"
 } 
 
+if(!body) return message.channel.send("1MILL% NOPE")
 
 if(!body.username) return message.channel.send("ERROR 404: 100% nope") 
 
