@@ -18,7 +18,7 @@ let body = r.body
 
  let emoji1 = ":warning:"
   
-if(body.minecraft.net === "green"){
+if(body.minecraft_net === "green"){
     emoji1 = ":white_check_mark:"
 }
 
