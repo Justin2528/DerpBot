@@ -13,7 +13,7 @@ console.log(url);
 const snekfetch = require("snekfetch");
 
 snekfetch.get(url).then(r => {
-
+let body = r.body
 
 console.log(body)
 
