@@ -15,7 +15,7 @@ const dbl = new DBL(process.env.APITOK, bot);
 
       let statuses = [
          `d>help - DerpBot`,
-         `Partner of EDGE! - DerpBot`,
+         `New Hypixel Commands! - DerpBot`,
          `DerpBot version: v1.1 - DerpBot`
       ]
       setInterval(function() {
