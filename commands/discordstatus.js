@@ -3,11 +3,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
- var IGN = args[0];
- 
-if(!IGN) return message.channel.send("Ok, what IS THE IGN????")
 
- var url = "";
+ var url = "https://srhpyqt94yxb.statuspage.io/api/v2/summary.json";
 
 console.log(url);
 
