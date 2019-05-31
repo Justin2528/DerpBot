@@ -20,7 +20,7 @@ console.log(body)
 let ok = new Discord.RichEmbed()
 .setTitle("Discord Status")
 .setColor("AQUA")
-.addField("API", body.page.components..status)
+.addField("API", body.page.components.status)
 
 //.addField("", body.page || "", true)
 
