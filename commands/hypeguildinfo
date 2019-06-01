@@ -1,0 +1,58 @@
+const Discord = require("discord.js");
+
+
+module.exports.run = async (bot, message, args) => {
+
+ var IGN = args[0];
+ 
+if(!IGN) return message.channel.send("Ok, where is da IGN????")
+
+ var url = "https://api.hypixel.net/findGuild?key=" + process.env.APIKEY + "&byUuid=" + "";
+
+console.log(url);
+
+
+
+const snekfetch = require("snekfetch");
+
+snekfetch.get(url).then(r => {
+let body = r.body
+
+
+
+if(!body) return message.channel.send("Something went wrong!")
+   let photo = "https://images-ext-1.discordapp.net/external/KiCZjFl7Ph0aD0Sy3-1EAADDbRLE8k6NayWFH6olu5o/%3Fs%3D200%26v%3D4/https/avatars0.githubusercontent.com/u/3840546"
+
+
+
+
+
+
+
+
+
+console.log(body)
+
+let ok = new Discord.RichEmbed()
+.setTitle("Hypixel Guild Info (Minecraft Server)")
+.setColor("GREEN")
+
+.setFooter("Hypixel Guild Stats", photo)
+
+
+
+//Ok LOL
+
+message.channel.send(ok)
+}) 
+}
+
+
+module.exports.config = {
+  name: "hypeguildinfo",
+  aliases: ["Hypixel"],
+  description: "Hypixel Guild info... that's all",
+  usage: "d>hypeguildinfo <IGN>",
+  noalias: "No Aliases",
+  accessableby: "memberssssss/giraffe/pitboi/Justin2528/duh"
+}
