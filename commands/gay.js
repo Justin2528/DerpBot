@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     let gayembed = new Discord.RichEmbed()
         .setColor("#f442d4")
-        .setTitle(`:gay_pride_flag: **I think ${message.author.username} is ${gay}% gay!** :gay_pride_flag:`);
+        .setTitle(`:gay_pride_flag: **I think ${message.author.username} is ${gay}% gay!** :gay_pride_flag:`)
         .setFooter("Event Command")
     message.delete(10);
     return message.channel.send(gayembed);
@@ -13,23 +13,14 @@ module.exports.run = async (bot, message, args) => {
 }
 
 
-module.exports.config = {
-  name: "",
-  aliases: [""],
-  description: "",
-  usage: "",
-  noalias: "No Aliases",
-  accessableby: ""
-}
 
-}
 
 
 module.exports.config = {
-  name: "",
-  aliases: [""],
-  description: "",
-  usage: "",
+  name: "gay",
+  aliases: ["g"],
+  description: "Gay .-.",
+  usage: "d>gay",
   noalias: "No Aliases",
-  accessableby: ""
+  accessableby: "Members"
 }
