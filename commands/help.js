@@ -98,6 +98,24 @@ if(args[0] == "staff"){
      message.channel.send(hembed).then(m => m.delete(10000));
     return message.author.send(Hiembed);
     }
+    if(args[0] == "event"){
+        let beembed = new Discord.RichEmbed()
+    .setAuthor("Help Command!", message.guild.iconURL)
+    .setColor("RANDOM")
+    .setDescription(`${message.author.username} check your DMs! 📬`)
+
+      let Evembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`DerpBot Help`, message.guild.iconURL)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`Event Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .addField(`Commands`,' `WIP(not a command)`')
+    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
+        .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
+     message.channel.send(beembed).then(m => m.delete(10000));
+    return message.author.send(Evembed);
+    }
   
   if(args[0]){
     let command = args[0];
@@ -131,7 +149,7 @@ if(args[0] == "staff"){
     .addField(`🎮 Psst!`, `Do d>help games for games!`)
     .addField(`🛠 Are you a tester?`, `Do d>help beta for some commands that are not release!`)
     .addField("⛏ You're a staff?", 'Do d>help staff!')
-
+.addField("**NEW!** Event Commands", 'Do d>help event!')
 .addField("Hypixel stats?", `Do d>help hypixel!`)
 .addField("Uh, the hive stats?", `Do d>help hivemc!`)
   
