@@ -110,7 +110,7 @@ if(args[0] == "staff"){
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Event Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `WIP(not a command)`')
+    .addField(`Commands`,' `gay`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
      message.channel.send(beembed).then(m => m.delete(10000));
