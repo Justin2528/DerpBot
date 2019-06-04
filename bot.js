@@ -95,7 +95,7 @@ if (message.channel.type === "dm") return message.channel.send("Sorry to tell yo
 
         
     
-if(!message.content.startsWith("d>","D>","@DerpBot#2567")) return;
+if(!message.content.startsWith("d>" || "D>" || "@DerpBot#2567")) return;
   
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(bot,message,args); 
