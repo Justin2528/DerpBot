@@ -104,28 +104,28 @@ if(!message.content.startsWith("d>","D>","@DerpBot#2567")) return;
     message.channel.send("Omg it work i cri omg ded not big surprise");
   }
   
-    if(cmd ===`${prefix}play`) {
+//     if(cmd ===`${prefix}play`) {
  
 
 
 
-  if(!args[1]) {
-    return message.channel.send("Gimme da music link.");
-  }
-  if(!message.member.voiceChannel) {
-      return message.channel.send("You are not in a voice channel...");
-   }
-  if(!servers[message.guild.id]) servers[message.guild.id] = {
-    queue: []
-   };
-  var server = servers[message.guild.id];
+//   if(!args[1]) {
+//     return message.channel.send("Gimme da music link.");
+//   }
+//   if(!message.member.voiceChannel) {
+//       return message.channel.send("You are not in a voice channel...");
+//    }
+//   if(!servers[message.guild.id]) servers[message.guild.id] = {
+//     queue: []
+//    };
+//   var server = servers[message.guild.id];
         
-        server.queue.push(args[1])
+//         server.queue.push(args[1])
 
-  if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-      play(connection, message);
-  });
-    }
+//   if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+//       play(connection, message);
+//   });
+//     }
 })
 
 
