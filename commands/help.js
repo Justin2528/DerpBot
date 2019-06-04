@@ -37,7 +37,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`🛠 Beta Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `welp no commands are here...`')
+    .addField(`Commands`,' ``')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
      message.channel.send(eembed).then(m => m.delete(10000));
@@ -98,7 +98,7 @@ if(args[0] == "staff"){
      message.channel.send(hembed).then(m => m.delete(10000));
     return message.author.send(Hiembed);
     }
-    if(args[0] == "event"){
+    if(args[0] == "speical"){
         let beembed = new Discord.RichEmbed()
     .setAuthor("Help Command!", message.guild.iconURL)
     .setColor("RANDOM")
@@ -109,7 +109,7 @@ if(args[0] == "staff"){
     .setAuthor(`DerpBot Help`, message.guild.iconURL)
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
-    .setDescription(`Event Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .setDescription(`Speical Commands || DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands`,' `gay`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.1", bot.user.displayAvatarURL)
@@ -149,7 +149,7 @@ if(args[0] == "staff"){
     .addField(`🎮 Psst!`, `Do d>help games for games!`)
     .addField(`🛠 Are you a tester?`, `Do d>help beta for some commands that are not release!`)
     .addField("⛏ You're a staff?", 'Do d>help staff!')
-.addField("**NEW!** Event Commands", 'Do d>help event!')
+.addField("**NEW!** Speical Commands", 'Do d>help speical!')
 .addField("Hypixel stats?", `Do d>help hypixel!`)
 .addField("Uh, the hive stats?", `Do d>help hivemc!`)
   
