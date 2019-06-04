@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     let gayembed = new Discord.RichEmbed()
         .setColor("#f442d4")
         .setTitle(`:gay_pride_flag: **I think ${message.author.username} is ${gay}% gay!** :gay_pride_flag:`)
-        .setFooter("Event Command")
+        .setFooter("Speical Command")
     message.delete(10);
     return message.channel.send(gayembed);
 
