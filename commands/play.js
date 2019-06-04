@@ -31,3 +31,4 @@ module.exports.config = {
   usage: "d>play <link>",
   noalias: "No Aliases",
   accessableby: "Members"
+}
