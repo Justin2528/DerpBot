@@ -15,9 +15,10 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.config = {
-    name: "ping",
+    name: "ping" || "pong",
     description: "PONG! Displays the api & bot latency",
     usage: "d>ping",
     accessableby: "Members",
     aliases: ["latency", "pong"]
 }
+ 
