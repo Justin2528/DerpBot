@@ -3,12 +3,11 @@ const moment = require('moment');
 
 const cooldown = new Set();
 module.exports.run = async (bot, message, args) => {
-   let args = message.content.split(' ').slice(1).join(' ');
-    message.delete();
+ message.delete()
     if (cooldown.has(message.author.id && message.guild.id)) {
         return message.channel.send('**[COOLDOWN]** Sending tickets has **5 Minutes** Cooldown!');
     }
-    if (args.length < 1) {
+    if (args.length < 0) {
         return message.channel.send(`You must give me something to report first ${message.author}`);
     }
     cooldown.add(message.author.id && message.guild.id);
@@ -16,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         cooldown.delete(message.author.id && message.guild.id);
     }, 300000);
     let guild = message.guild;
-    const cnl = client.channels.get('462551664319004672');
+    const cnl = bot.channels.get('586202199105732631');
     message.channel.send(`Hey, ${message.author}, we got your report! We will reply soon as possible! Here is the full ticket:`);
     const embed2 = new Discord.RichEmbed()
         .setAuthor(`Ticket from ${message.author.tag}`, message.author.displayAvatarURL)
