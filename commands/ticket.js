@@ -19,14 +19,14 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(`Hey, ${message.author}, we got your report! We will reply soon as possible! Here is the full ticket:`);
     const embed2 = new Discord.RichEmbed()
         .setAuthor(`Ticket from ${message.author.tag}`, message.author.displayAvatarURL)
-        .addField('Ticket:', `**Tickets's Author:** ${message.author.tag}\n**Server:** ${guild.name}\n**Full ticket:** ${args}`)
+        .addField('Ticket:', `**Tickets's Author:** ${message.author.tag}\n**Server:** ${guild.name}\n**Full ticket:** ${message.content}`)
         .setThumbnail(message.author.displayAvatarURL)
         .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`)
         .setColor(16711728);
     message.channel.send({ embed: embed2 });
     const embed = new Discord.RichEmbed()
         .setAuthor(`Ticket from ${message.author.tag}`, message.author.displayAvatarURL)
-        .addField('Ticket:', `**Report's Author:** ${message.author.tag}\n**Server:** ${guild.name}\n**Full report:** ${args}`)
+        .addField('Ticket:', `**Report's Author:** ${message.author.tag}\n**Server:** ${guild.name}\n**Full report:** ${message.content}`)
         .setThumbnail(message.author.displayAvatarURL)
         .setColor("#ffd700")
         .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`);
