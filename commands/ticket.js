@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     if (cooldown.has(message.author.id && message.guild.id)) {
         return message.channel.send('**[COOLDOWN]** Sending tickets has **5 Minutes** Cooldown!');
     }
-    if (args.length < 0) {
+    if (args.length < 1) {
         return message.channel.send(`You must give me something to report first ${message.author}`);
     }
     cooldown.add(message.author.id && message.guild.id);
