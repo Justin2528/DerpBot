@@ -23,14 +23,14 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(message.author.displayAvatarURL)
         .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`)
         .setColor(16711728);
-    message.channel.send({ embed: embed2 });
+    message.channel.send(embed2);
     const embed = new Discord.RichEmbed()
         .setAuthor(`Ticket from ${message.author.tag}`, message.author.displayAvatarURL)
         .addField('Ticket:', `**Report's Author:** ${message.author.tag}\n**Server:** ${guild.name}\n**Full report:** ${message.content}`)
         .setThumbnail(message.author.displayAvatarURL)
         .setColor("#ffd700")
         .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`);
-    cnl.send({ embed })
+    cnl.send(embed)
         .catch(e => cnl.send(e))
 
 }
