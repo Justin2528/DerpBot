@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("#ffd700")
         .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`);
     cnl.send({ embed })
-        .catch(e => logger.error(e))
+        .catch(e => message.channel.send(e))
 
 }
 
