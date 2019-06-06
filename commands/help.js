@@ -73,7 +73,7 @@ if(args[0] == "staff"){
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`⛏ Staff Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `mute` `ban` `softban` `unban` `purge`')
+    .addField(`Commands`,' `mute` `ban` `softban` `unban` `purge` `kick`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(membed).then(m => m.delete(10000));
@@ -146,7 +146,7 @@ if(args[0] == "staff"){
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
     .addField("Donate now!", "d>donate")
     .addField("Note:", "eval and reload can only be use my bot owner. So uh just look at them and do nothing.")
-    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `kick` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `invitelist` `createinvite` `weather`")
+    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `invitelist` `createinvite` `weather` `ticket`")
     .addField(`🎮 Psst!`, `Do d>help games for games!`)
     .addField(`🛠 Are you a tester?`, `Do d>help beta for some commands that are not release!`)
     .addField("⛏ You're a staff?", 'Do d>help staff!')
