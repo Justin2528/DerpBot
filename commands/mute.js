@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
-
+ if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `mute` don't work in DM!");
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
