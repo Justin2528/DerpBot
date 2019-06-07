@@ -4,7 +4,7 @@ const prefix = botconfig.prefix
 
 module.exports.run = async (bot, message, args) => {
 
-
+   if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `help` don't work in DM!");
   
   if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead!`);
 if(args[0] == "cool") return message.channel.send("No such command call `cool`");
