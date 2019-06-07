@@ -31,7 +31,7 @@ const dbl = new DBL(process.env.APITOK, bot);
 
       setInterval(function() {
             snekfetch.post(`https://discordbotlist.com/api/bots/547771680798539776/stats`)
-        .set('Authorization', '3e2ae91a8942bb8e59cb10f582de4342b13ac937b10b7f01843542fee894a0bcc85c95ef16ce718b3834fdcfb3bc35f5fee4b37e555e5c7d2fb7803608b9dc79')
+        .set('Authorization', '4d58ee17f10792ce736d6d93b564cc17e4d060a2822b1cef15be0ce777255dbf')
         .send({
             'guilds': bot.guilds.size,
               'users': bot.users.size,
