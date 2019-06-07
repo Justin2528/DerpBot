@@ -7,13 +7,13 @@ const superagent = require("superagent")
 module.exports.run = async (bot, message, args) => {
 
 if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `cat` don't work in DM!");
-    let msg = await message.channel.send("Generating Cat on Marsmi...")
+    let msg = await message.channel.send("Generating Cat with Meow...")
 
     let {body} = await superagent
     .get(`http://aws.random.cat/meow`)
     //console.log(body.file)
     if(!{body}) return message.channel.send("I broke! Try again.")
-    let meows = ["Cats live on mars 100%", "Marsmiew?", "BEow", "Roses are red, violets are blue, Marsmi is god."];
+    let meows = ["Cats live on earth", "Marsmi is gay", "BEow", "Roses are red, violets are blue, Cat is god."];
     let meow = meows[Math.floor(Math.random() * meows.length)]
 
         let cEmbed = new Discord.RichEmbed()
@@ -34,5 +34,5 @@ module.exports.config = {
     description: "Meow",
     usage: "d>cat",
     accessableby: "Cat",
-    aliases: ["Thanos Vs Marsmi! Who win? Always Marsmi you idiot.", "Mars"]
+    aliases: ["cat virus"]
 }
