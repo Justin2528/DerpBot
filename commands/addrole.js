@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 
 
 module.exports.run = async (bot, message, args) => {
-
+if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `addrole` don't work in DM!");
     if(!message.member.hasPermission(["MANAGE_ROLES", "ADMINISTRATOR"])) return message.channel.send("You dont have permission to perform this command!")
 
     let rMember = message.mentions.members.first() || message.guild.members.find(m => m.user.tag === args[0]) || message.guild.members.get(args[0])
