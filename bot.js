@@ -3,10 +3,8 @@ const YTDL = require("ytdl-core")
 const Discord = require("discord.js");
 const send = require("quick.hook");
 const bot = new Discord.Client({
-disableEveryone: true,
-  shardId: process.argv[1],
-  shardCount: process.argv[2],
-  fetchAllMembers: true
+disableEveryone: true
+
 });
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.APITOK, bot);
@@ -134,4 +132,4 @@ if(!message.content.startsWith("d>" || "D>" || "@DerpBot#2567")) return;
 })
 
 
-
+bot.login(process.env.TOKEN)
