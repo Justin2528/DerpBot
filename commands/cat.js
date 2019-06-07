@@ -5,6 +5,8 @@ const superagent = require("superagent")
 
 
 module.exports.run = async (bot, message, args) => {
+
+if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `cat` don't work in DM!");
     let msg = await message.channel.send("Generating Cat on Marsmi...")
 
     let {body} = await superagent
