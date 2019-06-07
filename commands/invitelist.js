@@ -2,7 +2,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-
+ if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `invitelist` don't work in DM!");
     let invites = await message.guild.fetchInvites().catch(error => {
         return message.channel.send('Sorry, I don\'t have the proper permissions to view invites!');
     });
