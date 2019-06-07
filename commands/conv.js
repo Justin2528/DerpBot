@@ -7,7 +7,7 @@ let ok = message.author.username
   message.channel.send("[???] Hello!").then( async msg => {
     setTimeout(() => {
         msg.edit(`[${ok}] Hello! Who are you?`);
-    }, 5000);
+    }, 2000);
     setTimeout(() => {
         msg.edit(`[Justin2528] Oh! Don't worry! I'm Justin2528! the bot creator!`);
     }, 9000);
