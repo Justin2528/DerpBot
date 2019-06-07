@@ -35,7 +35,7 @@ const dbl = new DBL(process.env.APITOK, bot);
         .send({
             'guilds': bot.guilds.size,
               'users': bot.users.size,
-                'voice_connections': bot.internal.voiceConnections
+                'voice_connections': bot.voiceConnections
         })
 
 
