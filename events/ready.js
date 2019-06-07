@@ -18,7 +18,7 @@ const dbl = new DBL(process.env.APITOK, bot);
       let statuses = [
          `d>help - DerpBot`,
          `New Hypixel Commands! - DerpBot`,
-         `DerpBot version: v1.1 - DerpBot`
+         `DerpBot version: v1.2 - DerpBot`
       ]
       setInterval(function() {
       let status = statuses[Math.floor(Math.random() * statuses.length)]
