@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `ban` don't work in DM!");
 message.delete()
   if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.reply(`||ERROR REPORT: ${message.author.username} HAVE NO BAN_MEMBERS PERMS.||`);
      
