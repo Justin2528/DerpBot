@@ -2,7 +2,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+
+   if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `1vs1` don't work in DM!");
     message.delete()
+
 
 
 
