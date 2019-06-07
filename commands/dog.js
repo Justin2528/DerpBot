@@ -8,18 +8,18 @@ module.exports.run = async (bot, message, args) => {
     let msg = await message.channel.send("Generating...")
 
     let {body} = await superagent
-    .get(`http://aws.random.cat/meow`)
+    .get(`https://dog.ceo/api/breeds/image/random`)
     //console.log(body.file)
     if(!{body}) return message.channel.send("I broke! Try again.")
     let meows = ["woof", "Woof?", "Boof", "oof", "Roses are red, violets are blue, woofs are bad."];
     let meow = meows[Math.floor(Math.random() * meows.length)]
 
         let cEmbed = new Discord.RichEmbed()
-        .setColor("RED")
+        .setColor("CYAN")
         .setAuthor(meow, message.guild.iconURL)
         .setImage(body.message)
         .setTimestamp()
-        .setFooter(`ima kill u`, bot.user.displayAvatarURL)
+        .setFooter(`Woof!`, bot.user.displayAvatarURL)
 
         message.channel.send({embed: cEmbed})
         
