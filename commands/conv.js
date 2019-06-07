@@ -32,6 +32,7 @@ let ok = message.author.username
         msg.delete(`T H E  E N D [?]`);
     }, 29000);
    });
+});
 }
 
 
