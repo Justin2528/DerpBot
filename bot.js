@@ -129,4 +129,4 @@ if(!message.content.startsWith("d>" || "D>" || "@DerpBot#2567")) return;
 })
 
 
-bot.login(process.env.TOKEN)
+
