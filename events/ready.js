@@ -42,6 +42,17 @@ const dbl = new DBL(process.env.APITOK, bot);
 
    }, 100000)
 
+      setInterval(function() {
+            snekfetch.post(`https://discord.bots.gg/api/v1/bots/547771680798539776/stats`)
+        .set('Authorization', process.env.DBGGTOK)
+        .send({
+            'guildCount': bot.guilds.size,
+
+        })
+
+
+
+   }, 100000)
 		setInterval(() => {
 			dbl.postStats(bot.guilds.size);
 		}, 100000)
