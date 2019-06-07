@@ -43,6 +43,7 @@ const dbl = new DBL(process.env.APITOK, bot);
    }, 100000)
       setInterval(function() {
             snekfetch.post(`https://discord.boats/api/v2/bot/547771680798539776`)
+      .set('Authorization', process.env.DBLC)
         .send({
             'server_count': bot.guilds.size
 
