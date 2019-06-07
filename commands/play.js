@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 const ytdl = require("ytdl-core");
 
-
+ if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `play` don't work in DM!");
 
  if (!message.member.voiceChannel) return message.channel.send('Please connect to a voice channel.');
     if (message.guild.me.voiceChannel) return message.channel.send('Sorry, the bot is already connected to the guild.');
