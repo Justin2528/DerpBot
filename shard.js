@@ -9,7 +9,6 @@ const shard = new ShardingManager('./bot.js', {
 
 shard.spawn(2);
 
-let ok = bot.channels.find("586517197044580352");
 
 
-shard.on('launch', shard => ok.send(`[SHARD] Shard ${shard.id}/${shard.totalShards}`));
+shard.on('launch', shard => console.log(`[SHARD] Shard ${shard.id}/${shard.totalShards}`));
