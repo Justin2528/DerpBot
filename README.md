@@ -7,4 +7,6 @@
 
 [![DiscordBots](https://discordbots.org/api/widget/547771680798539776.svg)](https://discordbots.org/bot/547771680798539776)
 
+[![DiscordBotList](https://discordbotlist.com/bots/547771680798539776/widget.png)](https://discordbotlist.com/bots/547771680798539776/)
+
 -----
