@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 
 module.exports.run = async (bot, message, args) => {
-
+ if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `kick` don't work in DM!");
     if(!message.member.hasPermission(["KICK_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("You dont have permission to perform this command!")
 
     let kickMember = message.mentions.members.first() || message.guild.members.get(args[0]) 
