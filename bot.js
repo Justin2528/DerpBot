@@ -82,7 +82,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("message", async message => {
   if(message.author.bot) return;
-if (message.channel.type === "dm") return message.channel.send("Sorry to tell you but commands don't work in DM channel!")
+//if (message.channel.type === "dm") return message.channel.send("Sorry to tell you but commands don't work in DM channel!")
   
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ")
