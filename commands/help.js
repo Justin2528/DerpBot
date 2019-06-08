@@ -92,7 +92,7 @@ if(args[0] == "staff"){
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Hypixel Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `pitstats (The first command that I created)` `watchdogstats` `hypixelstats` `bedwarstats` `mmstats (new! But it only got win. Am adding more)`')
+    .addField(`Commands`,' `pitstats (The first command that I created)` `watchdogstats` `hypixelstats` `bedwarstats` `uhcstats` `bbstats` `mmstats`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(hembed).then(m => m.delete(10000));
