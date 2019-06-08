@@ -9,4 +9,6 @@
 
 [![DiscordBotList](https://discordbotlist.com/bots/547771680798539776/widget.png)](https://discordbotlist.com/bots/547771680798539776/)
 
+[![DiscordBoats](https://discord.boats/api/widget/547771680798539776)](https://discord.boats/bot/547771680798539776)
+
 -----
