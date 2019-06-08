@@ -40,7 +40,7 @@ msg.react(emoji3)
         .then(connnection => {
           tts(tts1, `sv`, 1)
           .then((url) => {
-            const dispatcher = connnection.play(url);
+            const dispatcher = connnection.playStream(url);
             message.react('📢');
             dispatcher.on('end', () => voiceChannel.leave());
           })
@@ -66,7 +66,7 @@ msg.react(emoji3)
         .then(connnection => {
           tts(tts1, `en`, 1)
           .then((url) => {
-            const dispatcher = connnection.play(url);
+            const dispatcher = connnection.playStream(url);
             message.react('📢');
             dispatcher.on('end', () => voiceChannel.leave());
           })
@@ -90,7 +90,7 @@ msg.react(emoji3)
         .then(connnection => {
           tts(tts1, `fi`, 1)
           .then((url) => {
-            const dispatcher = connnection.play(url);
+            const dispatcher = connnection.playStream(url);
             message.react('📢');
             dispatcher.on('end', () => voiceChannel.leave());
           })
@@ -112,7 +112,7 @@ msg.react(emoji3)
         .then(connnection => {
           tts(tts1, `es`, 1)
           .then((url) => {
-            const dispatcher = connnection.play(url);
+            const dispatcher = connnection.playStream(url);
             message.react('📢');
             dispatcher.on('end', () => voiceChannel.leave());
           })
