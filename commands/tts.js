@@ -35,7 +35,7 @@ msg.react(emoji3)
 
             const voiceChannel = message.member.voiceChannel;
         if (!voiceChannel) return message.channel.send('**Please be in a voice channel first!**');
-        if (!client.voiceConnections.get(message.channel.guild.id)) {
+        if (!bot.voiceConnections.get(message.channel.guild.id)) {
         voiceChannel.join()
         .then(connnection => {
           tts(tts1, `sv`, 1)
@@ -61,7 +61,7 @@ msg.react(emoji3)
   eng.on('collect', r => {
               const voiceChannel = message.member.voiceChannel;
         if (!voiceChannel) return message.channel.send('**Please be in a voice channel first!**');
-        if (!client.voiceConnections.get(message.channel.guild.id)) {
+        if (!bot.voiceConnections.get(message.channel.guild.id)) {
         voiceChannel.join()
         .then(connnection => {
           tts(tts1, `en`, 1)
@@ -85,7 +85,7 @@ msg.react(emoji3)
 
             const voiceChannel = message.member.voiceChannel;
         if (!voiceChannel) return message.channel.send('**Please be in a voice channel first!**');
-        if (!client.voiceConnections.get(message.channel.guild.id)) {
+        if (!bot.voiceConnections.get(message.channel.guild.id)) {
         voiceChannel.join()
         .then(connnection => {
           tts(tts1, `fi`, 1)
@@ -107,7 +107,7 @@ msg.react(emoji3)
 
             const voiceChannel = message.member.voiceChannel;
         if (!voiceChannel) return message.channel.send('**Please be in a voice channel first!**');
-        if (!client.voiceConnections.get(message.channel.guild.id)) {
+        if (!bot.voiceConnections.get(message.channel.guild.id)) {
         voiceChannel.join()
         .then(connnection => {
           tts(tts1, `es`, 1)
