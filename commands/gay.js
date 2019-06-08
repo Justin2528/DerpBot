@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         .setFooter("Speical Command")
     message.delete(10);
     return message.channel.send(gayembed);
-
+//
 }
 
 
