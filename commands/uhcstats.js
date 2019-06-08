@@ -17,6 +17,8 @@ const snekfetch = require("snekfetch");
 
 snekfetch.get(url).then(r => {
 let body = r.body
+if(!body) return message.channel.send("Nope.")
+
 let offon = `${body.player.displayname} is offline!`
 let photo = "https://images-ext-1.discordapp.net/external/UdWXoKUsaYCOyvH6nsDk03AdfJVWTK7cyQVvhqpoF3I/https/image.ibb.co/hwheRV/image.png"
 
