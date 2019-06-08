@@ -134,10 +134,10 @@ msg.react(emoji3)
 
 
 module.exports.config = {
-  name: "",
-  aliases: [""],
-  description: "",
-  usage: "",
+  name: "tts",
+  aliases: ["tts (yes, it's just tts)"],
+  description: "TTS...",
+  usage: "d>tts <text>",
   noalias: "No Aliases",
-  accessableby: ""
+  accessableby: "Members (with perms fc)"
 }
