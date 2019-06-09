@@ -58,10 +58,11 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-bot.on("debug", function(info){
 
-   console.log(info)
-    
+client.on("debug", async info => {
+    let ok = bot.channels.find("587225097119465472");
+    console.log(`debug -> ${info}`);
+    ok.send(info)
 });
 
  bot.on("guildCreate", guild => {
