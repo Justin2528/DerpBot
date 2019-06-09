@@ -58,6 +58,11 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
+bot.on("debug", function(info){
+    let ok = bot.channels.find("587225097119465472")
+    ok.send(`debug -> ${info}`);
+});
+
  bot.on("guildCreate", guild => {
     const liveJoin = bot.channels.get("579190507780177941"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveJEmbed = new Discord.RichEmbed()
