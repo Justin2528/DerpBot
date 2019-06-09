@@ -59,6 +59,8 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("debug", function(info){
+ let lol = bot.channels.get("587225097119465472");
+ lol.send(info)
    console.log(info)
     
 });
