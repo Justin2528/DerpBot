@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
   let mutetime = args[1];
   if(!mutetime) return message.reply("You didn't specify a time!");
 
-if(mutetime === NaN) return message.channel.send("Not a number!")
+if(mutetime == NaN) return message.channel.send("Not a number!")
  
  
   message.delete().catch(O_o=>{});
