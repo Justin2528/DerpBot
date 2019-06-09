@@ -98,6 +98,7 @@ if(args[0] == "staff"){
      message.channel.send(hembed).then(m => m.delete(10000));
     return message.author.send(Hiembed);
     }
+
     if(args[0] == "speical"){
         let beembed = new Discord.RichEmbed()
     .setAuthor("Help Command!", message.guild.iconURL)
@@ -143,11 +144,12 @@ if(args[0] == "staff"){
     .setAuthor(`DerpBot Help`, message.guild.iconURL)
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
-    .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}`)
+    .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}\n [Join hyper now! (Partner)](https://discord.gg/KVVvaqn)`)
     .addField("Donate now!", "d>donate")
     .addField("Note:", "eval and reload can only be use my bot owner. So uh just look at them and do nothing.")
     .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `invitelist` `createinvite` `weather` `ticket`")
-    .addField(`🎮 Psst!`, `Do d>help games for games!`)
+    .addField("🎮 Psst!", "Do d>help games for games!")
+     .addField(`🤝 Partner!`, `d>partner!`)
     .addField(`🛠 Are you a tester?`, `Do d>help beta for some commands that are not release!`)
     .addField("⛏ You're a staff?", 'Do d>help staff!')
 .addField("**NEW!** Speical Commands", 'Do d>help speical!')
