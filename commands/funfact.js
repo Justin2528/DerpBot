@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   let ok = new Discord.RichEmbed()
    .setTitle("Fun Fact!")
   .setColor("RANDOM")
-   .setDescription(rf)
+   .setDescription(rf.randomFact())
    .setFooter("Derpbot 101");
 
    message.channel.send(ok)
