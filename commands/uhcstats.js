@@ -28,7 +28,7 @@ if(body.player.lastLogout < body.player.lastLogin){
 } 
 
 
-if(!body.player.stats.UHC) return message.channel.send(`ERROR 404: Uh, ${IGN} never player UHC? (hypixel bedwars)`)
+if(!body.player.stats.UHC) return message.channel.send(`ERROR 404: Uh, ${IGN} never player UHC? (hypixel)`)
 
 
 
