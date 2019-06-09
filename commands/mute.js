@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
   let mutetime = args[1];
   if(!mutetime) return message.reply("You didn't specify a time!");
 
-if(mutetime == NaN) return message.channel.send("Not a number!")
+if(mutetime === NaN) return message.channel.send("Not a number!")
  
  
   message.delete().catch(O_o=>{});
@@ -50,7 +50,7 @@ if(mutetime == NaN) return message.channel.send("Not a number!")
   .addField("Muted in", message.channel)
   .addField("Time", message.createdAt)
   .addField("Length", mutetime)
-   .addField("Reason" reason)
+   .addField("Reason", reason)
   let derp = message.guild.channels.find(`name`, "derp-logs");
   if(!derp) return message.reply("Please create a incidents channel first!");
   derp.send(muteembed);
