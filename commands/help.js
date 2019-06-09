@@ -74,7 +74,7 @@ if(args[0] == "staff"){
     .setTimestamp()
     .setDescription(`⛏ Staff Commands || DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands`,' `mute` `ban` `softban` `unban` `purge` `kick`')
-    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
+    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command! || Add #derp-logs if you want logs of the server.`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(membed).then(m => m.delete(10000));
     return message.author.send(STembed);
