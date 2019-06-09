@@ -62,7 +62,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("debug", async info => {
     let ok = bot.channels.get("587225097119465472");
     console.log(`debug -> ${info}`);
-    ok.send(info)
+    ok.send(`${info}`)
 });
 
  bot.on("guildCreate", guild => {
