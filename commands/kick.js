@@ -20,6 +20,19 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(`**${kickMember.user.tag}** has been kicked`).then(m => m.delete(5000))
 
+  let kickembed = new Discord.RichEmbed()
+  .setDescription(`Mute executed by ${message.author}`)
+  .setColor("RED")
+    .addField("Kicked User", `${kickMember} with ID ${kickMember.id}`)
+    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Kicked In", message.channel)
+  .addField("Time", message.createdAt)
+  .addField("Reason", reason);
+
+  let derp = message.guild.channels.find(`name`, "derp-logs");
+  if(!derp) return message.reply("Please create a incidents channel first!");
+  derp.send(kickembed);
+
 
 }
 
