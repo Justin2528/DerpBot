@@ -31,8 +31,6 @@ module.exports.run = async (bot, message, args) => {
   //end of create role
   let mutetime = args[1];
   if(!mutetime) return message.reply("You didn't specify a time!");
-
-if(mutetime === NaN) return message.channel.send("Not a number!")
  
  
   message.delete().catch(O_o=>{});
@@ -58,7 +56,7 @@ if(mutetime === NaN) return message.channel.send("Not a number!")
 
 
   await(tomute.addRole(muterole.id));
-
+ message.reply(`${tomute} has been muted for ${ms(mutetime)}`)
   setTimeout(function(){
     tomute.removeRole(muterole.id);
     message.channel.send(`<@${tomute.id}> has been unmuted!`);
