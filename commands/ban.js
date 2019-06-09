@@ -24,8 +24,19 @@ bane.send(`Hello there, I'm sorry to tell you but you have been banned in ${mess
 message.channel.send(`**${bane.user.username}** has been banned by ${message.author.username}. reason: ${reason}`);
 
 
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("~Ban~")
+    .setColor("#bc0000")
+    .addField("Banned User", `${bane} with ID ${bane.id}`)
+    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Banned In", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", reason);
 
-  
+    let derp = message.guild.channels.find(`name`, "derp-logs");
+    if(!derp) return message.channel.send("Can't find `derp-logs`. There will be no logs...");
+
+          derp.send(banEmbed)
   
   
   }
