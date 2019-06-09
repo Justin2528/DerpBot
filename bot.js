@@ -88,7 +88,11 @@ bot.on("debug", async info => {
     })
  });
 
+bot.on("warn", async info => {
+     let ok = bot.channels.get("587235530073440266");
+     ok.send(`warn: ${info}`)
 
+});
 
 bot.on("message", async message => {
   if(message.author.bot) return;
