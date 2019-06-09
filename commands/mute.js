@@ -6,13 +6,16 @@ module.exports.run = async (bot, message, args) => {
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
+  let reason = args.slice(2).join(" ");
+  if(!reason) return message.reply("Please supply a reason.");
+
   let muterole = message.guild.roles.find(`name`, "muted");
   //start of create role
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
         name: "muted",
-        color: "#55FFFF",
+        color: "#000000",
         permissions:[]
       })
       message.guild.channels.forEach(async (channel, id) => {
@@ -25,14 +28,9 @@ module.exports.run = async (bot, message, args) => {
       console.log(e.stack);
     }
   }
-
-  message.delete().catch(O_o=>{});
-
-
   //end of create role
   let mutetime = args[1];
   if(!mutetime) return message.reply("You didn't specify a time!");
-
 
   message.delete().catch(O_o=>{});
 
@@ -49,21 +47,19 @@ module.exports.run = async (bot, message, args) => {
   .addField("Muted in", message.channel)
   .addField("Time", message.createdAt)
   .addField("Length", mutetime)
-  .addField("Reason", reason);
 
   let derp = message.guild.channels.find(`name`, "derp-logs");
   if(!derp) return message.reply("Please create a incidents channel first!");
   derp.send(muteembed);
 
+
+
   await(tomute.addRole(muterole.id));
-  message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
     message.channel.send(`<@${tomute.id}> has been unmuted!`);
   }, ms(mutetime));
-
-
 }
 
 
