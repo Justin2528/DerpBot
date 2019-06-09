@@ -65,6 +65,11 @@ bot.on("debug", async info => {
     ok.send(`${info}`)
 });
 
+bot.on("error",async error => {
+   let ok = bot.channels.get("587241780655947778");
+  ok.send(`error! ${error}`);
+});
+
  bot.on("guildCreate", guild => {
     const liveJoin = bot.channels.get("579190507780177941"); //CHANGE TO YOUR CHANNEL-ID TO GET NOTIFICATIONS
     let liveJEmbed = new Discord.RichEmbed()
