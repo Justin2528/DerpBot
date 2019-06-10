@@ -11,6 +11,8 @@ module.exports.run = async (bot, message, args) => {
   .setTitle(`${ayy} Random Article Title!`)
   .setDescription(title)
   .setFooter("DerpBot")
+
+ message.channel.send(ok)
 });
 }
 
