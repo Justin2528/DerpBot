@@ -11,7 +11,7 @@ const ayy = bot.emojis.get("468044901913853963");
    .setTitle(`${ayy} DOG Fact!`)
   .setColor("RANDOM")
    .setDescription(randomFact)
-   .setFooter("Derpbot Woof");
+   .setFooter("Derpbot Meow");
 message.channel.send(ok)
 }
 
