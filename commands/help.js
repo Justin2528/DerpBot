@@ -20,7 +20,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Fun || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`🎮 Fun commands`, " `minesweeper` `mcachievement` `yesorno` `dogfact` `funfact` `wikifact` `wikiat` `quiz` `meme` `cat` `dog` `1vs1` `8ball` `kill` `slots` `rate`")
+    .addField(`🎮 Fun commands`, " `minesweeper` `mcachievement` `yesorno` `dogfact` `catfact` `funfact` `wikifact` `wikiat` `quiz` `meme` `cat` `dog` `1vs1` `8ball` `kill` `slots` `rate`")
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(gembed).then(m => m.delete(10000));
     return message.author.send(Gembed);
