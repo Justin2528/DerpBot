@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
  const ayy = bot.emojis.get("468044901913853963");
   WikiFakt.getRandomFact().then(function(fact) {
   let ok = new Discord.RichEmbed()
-  .setColor("Random")
+  .setColor("RANDOM")
   .setTitle(`${ayy} Wiki Fact`)
   .setDescription(fact)
   .setFooter("DerpBot WikiFact")
