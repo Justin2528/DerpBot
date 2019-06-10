@@ -10,6 +10,7 @@
   "description": "A bot made by Justin2528!",
   "dependencies": {
     "discord.js": "^11.4.2",
+   "canvas": "^2.5.0",
     "dblapi.js": "2.3.0",
     "cat-facts": "1.0.2",
     "dog-facts": "^1.0.3",
