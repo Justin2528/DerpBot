@@ -7,7 +7,7 @@ const ayy = bot.emojis.get("468044901913853963");
 
 
  .setTitle(`${ayy} Partners`)
- .setDescription("[Hyper (Discord Server)](https://discord.gg/KVVvaqn)\n [{TheSourceCode} (Discord Server)](https://discord.gg/nbjYAvq)\n [[MenuDocs] (Discord Server)](https://discord.gg/h4X9eNY)")
+ .setDescription("[Hyper (Discord Server)](https://discord.gg/KVVvaqn)\n [Cosmo's World (Discord Server)](https://discord.gg/n6TTNkS)\n [{TheSourceCode} (Discord Server)](https://discord.gg/nbjYAvq)\n [[MenuDocs] (Discord Server)](https://discord.gg/h4X9eNY)")
  .setFooter("DerpBot Partners")
  
  
