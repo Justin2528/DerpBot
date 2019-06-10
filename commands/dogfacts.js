@@ -15,10 +15,10 @@ const ayy = bot.emojis.get("468044901913853963");
 
 
 module.exports.config = {
-  name: "",
-  aliases: [""],
-  description: "",
-  usage: "",
+  name: "dogfact",
+  aliases: ["dg"],
+  description: "Dog Facts Woof",
+  usage: "d>dogfact",
   noalias: "No Aliases",
-  accessableby: ""
+  accessableby: "Dogs or Members"
 }
