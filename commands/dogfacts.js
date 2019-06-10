@@ -11,6 +11,7 @@ const ayy = bot.emojis.get("468044901913853963");
   .setColor("RANDOM")
    .setDescription(randomFact)
    .setFooter("Derpbot Woof");
+message.channel.send(ok)
 }
 
 
