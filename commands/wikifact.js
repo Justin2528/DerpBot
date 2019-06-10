@@ -11,6 +11,8 @@ module.exports.run = async (bot, message, args) => {
   .setTitle(`${ayy} Wiki Fact`)
   .setDescription(fact)
   .setFooter("DerpBot WikiFact")
+
+ message.channel.send(ok)
 });
 }
 
