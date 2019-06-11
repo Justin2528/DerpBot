@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Reason", reason);
 
   let derp = message.guild.channels.find(`name`, "derp-logs");
-
+    if(!derp) message.channel.send("Can't find `derp-logs`. There will be no logs...");
   derp.send(kickembed);
 
 
