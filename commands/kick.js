@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Reason", reason);
 
   let derp = message.guild.channels.find(`name`, "derp-logs");
-  if(!derp) return message.reply("Please create a incidents channel first!");
+
   derp.send(kickembed);
 
 
