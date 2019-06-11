@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
 
-const discordFacts = require('discordfacts');
+
  
 
 module.exports.run = async (bot, message, args) => {
+const discordFacts = require('discordfacts');
   let randomFact = discordFacts.random();
 const ayy = bot.emojis.get("468044901913853963");
  let ok = new Discord.RichEmbed()
