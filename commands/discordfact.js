@@ -16,7 +16,7 @@ message.channel.send(ok)
 
 
 module.exports.config = {
-  name: "discordact",
+  name: "discordfact",
   aliases: ["dg"],
   description: "Discord Fact Boop",
   usage: "d>discordfact",
