@@ -34,7 +34,7 @@ message.channel.send(`**${bane.user.username}** has been banned by ${message.aut
     .addField("Reason", reason);
 
     let derp = message.guild.channels.find(`name`, "derp-logs");
-    if(!derp) return message.channel.send("Can't find `derp-logs`. There will be no logs...");
+    if(!derp) message.channel.send("Can't find `derp-logs`. There will be no logs...");
 
           derp.send(banEmbed)
   
