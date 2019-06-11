@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 
+var discordFacts = require('discordfacts');
 
  
 
 module.exports.run = async (bot, message, args) => {
-const discordFacts = require('discordfacts');
-  let randomFact = discordFacts.random();
+var randomFact = discordFacts.random();
 const ayy = bot.emojis.get("468044901913853963");
  let ok = new Discord.RichEmbed()
    .setTitle(`${ayy} Discord Fact!`)
