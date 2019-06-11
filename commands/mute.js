@@ -50,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Length", mutetime)
    .addField("Reason", reason)
   let derp = message.guild.channels.find(`name`, "derp-logs");
-  if(!derp) return message.reply("Please create a incidents channel first!");
+    if(!derp) message.channel.send("Can't find `derp-logs`. There will be no logs...");
   derp.send(muteembed);
 
 
