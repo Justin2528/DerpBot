@@ -1,8 +1,12 @@
 const Discord = require("discord.js");
+let config = require("../botconfig.json")
+let prefix = config.prefix
 
 module.exports.run = async (bot, message, args) => {
   
     var choice = args[0];
+
+  if(!choice) return message.channel.send("Nope")
   if (choice == "paper" || choice == "p") {
     var numb = Math.floor(Math.random() * 100);
     if (numb <= 50) {

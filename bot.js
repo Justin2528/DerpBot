@@ -2,10 +2,13 @@ const botconfig = require("./botconfig.json");
 const YTDL = require("ytdl-core")
 const Discord = require("discord.js");
 const send = require("quick.hook");
+const xp = require("./xp.json")
 const bot = new Discord.Client({
 disableEveryone: true
 
 });
+const ownerID = '386490806716071946'
+const active = new Map();
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.APITOK, bot);
 
@@ -50,6 +53,7 @@ fs.readdir("./commands/", (err, files) => {
     
     jsfile.forEach((f, i) => {
         let pull = require(`./commands/${f}`);
+
         bot.commands.set(pull.config.name, pull);
         pull.config.aliases.forEach(alias => {
             bot.aliases.set(alias, pull.config.name)
@@ -59,11 +63,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
-bot.on("debug", async info => {
-    let ok = bot.channels.get("587225097119465472");
-    console.log(`debug -> ${info}`);
-    ok.send(`${info}`)
-});
+
 
 bot.on("error",async error => {
    let ok = bot.channels.get("587241780655947778");
@@ -109,15 +109,44 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
 
+let xpAdd = Math.floor(Math.random() * 7) + 8;
 
 
+  if(!xp[message.author.id]){
+    xp[message.author.id] = {
+      xp: 0,
+      level: 1
+    };
+  }
 
+
+  let curxp = xp[message.author.id].xp;
+  let curlvl = xp[message.author.id].level;
+  let nxtLvl = xp[message.author.id].level * 500;
+  xp[message.author.id].xp =  curxp + xpAdd;
+  if(nxtLvl <= xp[message.author.id].xp){
+    xp[message.author.id].level = curlvl + 1;
+    let lvlup = new Discord.RichEmbed()
+    .setTitle("Level Up!")
+    .setColor("PURPLE")
+    .addField("New Level", curlvl + 1);
+
+    message.channel.send(lvlup).then(msg => {msg.delete(5500)});
+  }
+  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+    if(err) console.log(err)
+  }); 
+
+    let ops = {
+      ownerID: ownerID,
+      active: active
+    }
         
     
 if(!message.content.startsWith("d>" || "D>" || "@DerpBot#2567")) return;
   
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-    if(commandfile) commandfile.run(bot,message,args); 
+    if(commandfile) commandfile.run(bot,message,args,ops); 
     
   if(cmd ===`${prefix}test`){
     message.channel.send("Omg it work i cri omg ded not big surprise");

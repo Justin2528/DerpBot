@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   //code here
  let cool = bot.emojis.get("450936886739861504");
-  if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("NEED ADMIN PERMS!");
+  if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("NEED ADMIN PERMS!");
   
 if(!args[0]) return message.channel.send("Uh... Air?")
 

@@ -13,7 +13,7 @@ const dbl = new DBL(process.env.APITOK, bot);
  const bfd = new BFDAPI(bot,process.env.BFD);
 
         
-
+    console.log("Bot is ready!")
 
       let statuses = [
          `d>help - DerpBot`,

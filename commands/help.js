@@ -37,7 +37,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`🛠 Beta Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `play` `tictactoe`')
+    .addField(`Commands`,'`tictactoe`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(eembed).then(m => m.delete(10000));
@@ -73,7 +73,7 @@ if(args[0] == "staff"){
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`⛏ Staff Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `mute` `ban` `softban` `unban` `purge` `kick`')
+    .addField(`Commands`,' `mute` `ban` `softban` `unban` `say` `warn` `purge` `kick`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command! || Add #derp-logs if you want logs of the server.`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(membed).then(m => m.delete(10000));
@@ -92,7 +92,7 @@ if(args[0] == "staff"){
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Hypixel Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `pitstats (The first command that I created)` `watchdogstats` `hypixelstats` `bedwarstats` `uhcstats` `bbstats` `mmstats`')
+    .addField(`Commands`,' `pitstats` `watchdogstats` `hypixelstats` `bedwarstats` `uhcstats` `bbstats` `mmstats`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(hembed).then(m => m.delete(10000));
@@ -112,6 +112,24 @@ if(args[0] == "staff"){
     .setTimestamp()
     .setDescription(`Speical Commands || DerpBot\n The bot prefix is: ${prefix}`)
     .addField(`Commands`,' `gay`')
+    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
+        .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
+     message.channel.send(beembed).then(m => m.delete(10000));
+    return message.author.send(Evembed);
+    }
+    if(args[0] == "music"){
+        let beembed = new Discord.RichEmbed()
+    .setAuthor("Help Command!", message.guild.iconURL)
+    .setColor("RANDOM")
+    .setDescription(`${message.author.username} check your DMs! 📬`)
+
+      let Evembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`DerpBot Help`, message.guild.iconURL)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`Music Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .addField(`Commands`,' `play` `leave` `queue` `skip` `resume` `pause` `volume`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(beembed).then(m => m.delete(10000));
@@ -146,10 +164,11 @@ if(args[0] == "staff"){
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}\n [Join hyper now! (Partner)](https://discord.gg/KVVvaqn)`)
     .addField("Donate now!", "d>donate")
-    .addField("Note:", "eval and reload can only be use my bot owner. So uh just look at them and do nothing.")
-    .addField(`Commands:`, "``serverinfo`` `help` `test2` `rps` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `invitelist` `createinvite` `weather` `ticket`")
+    .addField("Note:", "eval and reload can only be use my bot owner. So uh just look at them and do nothing. || (+) you need to create a channel call `derp-reports`")
+    .addField(`Commands:`, " `level` `serverinfo` `+report` `help` `test2` `rps` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `invitelist` `createinvite` `weather` `ticket`")
     .addField("🎮 Psst!", "Do d>help fun for fun commands!")
      .addField(`🤝 Partner!`, `d>partner!`)
+    .addField("🎵 Music!", `d>help music`)
     .addField(`🛠 Are you a tester?`, `Do d>help beta for some commands that are not release!`)
     .addField("⛏ You're a staff?", 'Do d>help staff!')
 .addField("**NEW!** Speical Commands", 'Do d>help speical!')

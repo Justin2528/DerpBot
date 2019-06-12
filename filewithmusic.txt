@@ -1,20 +1,12 @@
-
 const Discord = require("discord.js");
-const YTDL = require("ytdl-core")
 
-module.exports.run = async (bot, message, args) => {
-  let servers = {};
+module.exports.run = async (bot, message, args, ops) => {
+  let fetched = ops.active.get(message.guild.id);
 
-function play(connection, message) {
-  var server = servers[message.guild.id];
-
-  server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-  server.queue.shift();
-
-  server.dispatcher.on("end", function () {
-   if (server.queue[0]) play(connection, message);
-   else connection.disconnect();
-});
+  if(!fetched) return message.channel.send("There currently isn't any music playing in this guild!");
+  
+  if (message.member.voiceChannel !== message.guild.me.voiceChannel) return message.channel.send("Sorry, you currently aren't in the same channel as the bot!");
+  
 }
 
 
@@ -26,3 +18,4 @@ module.exports.config = {
   noalias: "No Aliases",
   accessableby: ""
 }
+

@@ -4,7 +4,7 @@ const botconfig = require("../botconfig.json");
 
 
 module.exports.run = async (bot, message, args) => {
-
+    if(message.channel.type === "dm") return message.channel.send("Nope")
     if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("You dont have permission to perform this command!")
 
     let bannedMember = await bot.fetchUser(args[0])
