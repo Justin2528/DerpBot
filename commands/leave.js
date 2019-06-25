@@ -9,10 +9,10 @@ if(!message.guild.me.voiceChannel) return message.channel.send("Sorry, but the b
 if(message.guild.me.voiceChannelID !== message.member.voiceChannelID) return message.channel.send("Sorry, you aren't connected to the same channel.")
 let data = ops.active.get(message.guild.id) || {};
  let guildID = message.guild.id;
-
-ops.active.delete(data.dispatcher.guildID);
-
  message.guild.me.voiceChannel.leave();
+ops.active.delete(data.dispatcher.guildID).catch(console.error);
+
+
 
  message.channel.send("Leaving channel...")
 }

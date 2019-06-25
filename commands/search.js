@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args, ops) => {
      let resp = '';
      for (var i in videos) {
        
-        resp += `**[${parseInt(i)+1}**] \`${videos[i].title}\`\n`;
+        resp += `**[${parseInt(i)+1}]** \`${videos[i].title}\`\n`;
        
         
      }

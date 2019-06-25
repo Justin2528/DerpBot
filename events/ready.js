@@ -3,6 +3,7 @@ const DBL = require("dblapi.js");
 const bot = new Discord.Client();
  const BFDAPI = require("bfdapi.js");
   const bfd = new BFDAPI(bot,process.env.BFD);
+const giveaways = require("discord-giveaways")
 
 const snekfetch = require("snekfetch");
 
@@ -26,8 +27,20 @@ const dbl = new DBL(process.env.APITOK, bot);
    
 
 
-
    }, 12000)
+
+
+
+
+    giveaways.launch(bot, {
+        updateCountdownEvery: 5000,
+        botsCanWin: false,
+        ignoreIfHasPermission: [
+
+        ],
+        embedColor: "#00FFFF",
+        reaction: "🎉"
+    });
 
       setInterval(function() {
             snekfetch.post(`https://discordbotlist.com/api/bots/547771680798539776/stats`)
@@ -38,7 +51,7 @@ const dbl = new DBL(process.env.APITOK, bot);
                 'voice_connections': bot.voiceConnections
         })
 
-
+  
 
    }, 100000)
       setInterval(function() {

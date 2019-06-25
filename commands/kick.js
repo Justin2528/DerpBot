@@ -1,9 +1,10 @@
 const Discord = require("discord.js")
 
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args,dsettings,guildconf) => {
+  bot.settings.ensure(message.guild.id, dsettings);
  if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `kick` don't work in DM!");
-    if(!message.member.hasPermission(["KICK_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("You dont have permission to perform this command!")
+    if(!message.member.hasPermissions("KICK_MEMBERS", "ADMINISTRATOR")) return message.channel.send("You dont have permission to perform this command!")
 
     let kickMember = message.mentions.members.first() || message.guild.members.get(args[0]) 
     if(!kickMember) return message.channel.send("Please provide a user to kick!")
@@ -29,9 +30,11 @@ module.exports.run = async (bot, message, args) => {
   .addField("Time", message.createdAt)
   .addField("Reason", reason);
 
-  let derp = message.guild.channels.find(`name`, "derp-logs");
-    if(!derp) message.channel.send("Can't find `derp-logs`. There will be no logs...");
-  derp.send(kickembed);
+ let derp = message.guild.channels.find("name", bot.settings.get(message.guild.id, "modLogChannel"))
+ if(!derp) return message.channel.send("plz d>setconf modLogChannel <Channel Name> to set the mod log channel.")
+    derp.send(kickembed)
+    .catch(console.error);
+
 
 
 }

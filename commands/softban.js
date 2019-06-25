@@ -1,10 +1,11 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args,dsettings) => {
 message.delete()
-  if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.reply(`||ERROR REPORT: ${message.author.username} HAVE NO BAN_MEMBERS PERMS.||`);
+  if(!message.member.hasPermissions("BAN_MEMBERS", "ADMINISTRATOR")) return message.reply(`||ERROR REPORT: ${message.author.username} HAVE NO BAN_MEMBERS PERMS.||`);
      
-
+ bot.settings.ensure(message.guild.id, dsettings);
+  
 
   let bane = message.mentions.members.first() || message.guild.members.get(args[0]);
   
@@ -24,8 +25,11 @@ if(!message.guild.me.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return mes
 
 bane.send(`Hello there, I'm sorry to tell you but you have been banned in ${message.guild.name} by ${message.author.username}. reason: ${reason}`).then(() =>
   message.guild.ban(bane, {days: time, reason: reason})).then(() => message.guild.unban(bane.id)).catch(err => message.channel.send(err))
+    let derp = message.guild.channels.find("name", bot.settings.get(message.guild.id, "modLogChannel"))
+       if(!derp) return message.channel.send("PLZ do d>setconf modLogChannel <Channel Name>. You need log right?")
+derp.send(`**${bane.user.username}** has been banned by ${message.author.username}. reason: ${reason}`)
+    .catch(console.error);
 
-message.channel.send(`**${bane.user.username}** has been banned by ${message.author.username}. reason: ${reason}`);
 
 
 

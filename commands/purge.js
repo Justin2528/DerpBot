@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   // Now, we can delete the messages
   message.channel.bulkDelete(args[0])
     .then(messages => message.channel.send(`**Successfully deleted \`${messages.size}/${args[0]}\` messages**`).then(msg => msg.delete(5000)));
-}
+} 
 
 
 module.exports.config = {

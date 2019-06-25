@@ -1,8 +1,11 @@
 const Discord = require("discord.js");
 const ms = require("ms");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args,guildconf,gsettings) => {
+ bot.settings.ensure(message.guild.id, dsettings);
+  
  if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `mute` don't work in DM!");
+  if(!message.member.hasPermissions("MANAGE_MESSAGES", "ADMINSTRATOR")) return message.reply("No can do.");
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
@@ -35,6 +38,8 @@ module.exports.run = async (bot, message, args) => {
  
   message.delete().catch(O_o=>{});
 
+
+ 
   try{
     await tomute.send(`Hi! You've been muted for ${mutetime}. Sorry!`)
   }catch(e){
@@ -49,10 +54,11 @@ module.exports.run = async (bot, message, args) => {
   .addField("Time", message.createdAt)
   .addField("Length", mutetime)
    .addField("Reason", reason)
-  let derp = message.guild.channels.find(`name`, "derp-logs");
-    if(!derp) message.channel.send("Can't find `derp-logs`. There will be no logs...");
-  derp.send(muteembed);
 
+     let derp = message.guild.channels.find("name", bot.settings.get(message.guild.id, "modLogChannel"))
+     if(!derp) return message.channel.send("PLZ do d>setconf modLogChannel <Channel Name>. You need log right?")
+   derp.send(muteembed)
+    .catch(console.error);
 
 
   await(tomute.addRole(muterole.id));

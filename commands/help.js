@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const botconfig = require("../botconfig.json")
-const prefix = botconfig.prefix
+const db = require("quick.db");
 
-module.exports.run = async (bot, message, args) => {
-
+module.exports.run = async (bot, message, args, ops, guildconf) => {
+let prefix = guildconf.prefix
    if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `help` don't work in DM!");
   
   if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead!`);
@@ -20,7 +20,7 @@ if(args[0] == "cool") return message.channel.send("No such command call `cool`")
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Fun || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`🎮 Fun commands`, " `minesweeper` `mcachievement` `yesorno` `dogfact` `catfact` `funfact` `wikifact` `wikiat` `quiz` `meme` `cat` `dog` `1vs1` `8ball` `kill` `slots` `rate`")
+    .addField(`🎮 Fun commands`, " `minesweeper` `mcachievement` `yesorno` `dogfact` `catfact` `funfact` `wikifact` `wikiat` `quiz` `meme` `cat` `dog` `1vs1` `8ball` `kill` `slot` `rate`")
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(gembed).then(m => m.delete(10000));
     return message.author.send(Gembed);
@@ -73,7 +73,7 @@ if(args[0] == "staff"){
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`⛏ Staff Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `mute` `ban` `softban` `unban` `say` `warn` `purge` `kick`')
+    .addField(`Commands`,' `mute` `ban` `softban` `greroll<giveaway>` `lockdown` `gedit<giveaway>` `unban` `say` `warn` `setconf` `showconf` `giveaway (Need giveaway role)` `purge` `kick`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command! || Add #derp-logs if you want logs of the server.`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(membed).then(m => m.delete(10000));
@@ -129,11 +129,29 @@ if(args[0] == "staff"){
     .setThumbnail(bot.user.displayAvatarURL)
     .setTimestamp()
     .setDescription(`Music Commands || DerpBot\n The bot prefix is: ${prefix}`)
-    .addField(`Commands`,' `play` `leave` `queue` `skip` `resume` `pause` `volume`')
+    .addField(`Commands`,' `play` `leave` `queue` `skip` `albums` `resume` `pause` `volume`')
     .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
      message.channel.send(beembed).then(m => m.delete(10000));
     return message.author.send(Evembed);
+    }
+  if(args[0] == "eco"){
+        let boimbed = new Discord.RichEmbed()
+    .setAuthor("Help Command!", message.guild.iconURL)
+    .setColor("RANDOM")
+    .setDescription(`${message.author.username} check your DMs! 📬`)
+
+      let BOImbed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`DerpBot Help`, message.guild.iconURL)
+    .setThumbnail(bot.user.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`Economy Commands || DerpBot\n The bot prefix is: ${prefix}`)
+    .addField(`Commands`,' `bal` `daily` `rob` `work`  `pay` `add-money` `remove-money` `shop` `buy` `items` `crime`')
+    .addField(`Note:` , `Tell JuStIn2528#9111 if there was something wrong with the command!`)
+        .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
+     message.channel.send(boimbed).then(m => m.delete(10000));
+    return message.author.send(BOImbed);
     }
   
   if(args[0]){
@@ -164,16 +182,17 @@ if(args[0] == "staff"){
     .setTimestamp()
     .setDescription(`These are the avaliable commands for the DerpBot\n The bot prefix is: ${prefix}\n [Join hyper now! (Partner)](https://discord.gg/KVVvaqn)`)
     .addField("Donate now!", "d>donate")
-    .addField("Note:", "eval and reload can only be use my bot owner. So uh just look at them and do nothing. || (+) you need to create a channel call `derp-reports`")
-    .addField(`Commands:`, " `level` `serverinfo` `+report` `help` `test2` `rps` `ping` `uptime` (`eval` `reload`) `invite` `npm` `vote` `invitelist` `createinvite` `weather` `ticket`")
-    .addField("🎮 Psst!", "Do d>help fun for fun commands!")
-     .addField(`🤝 Partner!`, `d>partner!`)
-    .addField("🎵 Music!", `d>help music`)
-    .addField(`🛠 Are you a tester?`, `Do d>help beta for some commands that are not release!`)
-    .addField("⛏ You're a staff?", 'Do d>help staff!')
-.addField("**NEW!** Speical Commands", 'Do d>help speical!')
-.addField("Hypixel stats?", `Do d>help hypixel!`)
-.addField("Uh, the hive stats?", `Do d>help hivemc!`)
+    .addField("Note:", "eval,execute and reload can only be use my bot owner. So uh just look at them and do nothing. || (+) you need to create a channel call `derp-reports`")
+    .addField(`Commands:`, " `level` `serverinfo` `+report` `top15servers` `help` `test2` `rps` `ping` `uptime` (`eval` `execute` `reload`) `invite` `npm` `vote` `invitelist` `createinvite` `weather` `ticket`")
+    .addField("🎮 Psst!", `Do ${prefix}help fun for fun commands!`)
+     .addField(`🤝 Partner!`, `${prefix}partner!`)
+    .addField("💰 Money! Bank!", `${prefix}help eco`)
+    .addField("🎵 Music!", `${prefix}help music`)
+    .addField(`🛠 Are you a tester?`, `Do ${prefix}help beta for some commands that are not release!`)
+    .addField("⛏ You're a staff?", `Do ${prefix}help staff!`)
+.addField("**NEW!** Speical Commands", `Do ${prefix}help speical!`)
+.addField("Hypixel stats?", `Do ${prefix}help hypixel!`)
+.addField("Uh, hive mc stats?", `Do ${prefix}help hivemc!`)
   
         .setFooter("DerpBot v1.2", bot.user.displayAvatarURL)
     message.channel.send(embed).then(m => m.delete(10000));

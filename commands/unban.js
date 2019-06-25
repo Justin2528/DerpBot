@@ -3,8 +3,11 @@ const botconfig = require("../botconfig.json");
 
 
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args,dsettings) => {
+  bot.settings.ensure(message.guild.id, dsettings);
+  
     if(message.channel.type === "dm") return message.channel.send("Nope")
+
     if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("You dont have permission to perform this command!")
 
     let bannedMember = await bot.fetchUser(args[0])
@@ -22,6 +25,11 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send(e.message)
     }
 bannedMember.send(`You have been unbanned by ${message.author.username} in ${message.guild.name}. reason: ||${reason}||`)
+
+    let derp = message.guild.channels.find("name", bot.settings.get(message.guild.id, "modLogChannel"))
+       if(!derp) return message.channel.send("PLZ do d>setconf modLogChannel <Channel Name>. You need log right?")
+derp.send(`**${bannedMember.user.username}** has been unbanned by ${message.author.username}. reason: ${reason}`)
+    .catch(console.error);
 
 }
 

@@ -1,56 +1,102 @@
-const Discord = require("discord.js");
-const fs = require("fs");
-const ms = require("ms");
+const fs = require("fs")
+   var Discord = require('discord.js');
+    var db = require('quick.db')
+
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
-module.exports.run = async (bot, message, args) => {
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Nope");
-   
-  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-  if(!wUser) return message.reply("Couldn't find them yo");
-  if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("They waaaay too kewl");
-  let reason = args.join(" ").slice(22);
+module.exports.run = async (bot, message, args,dsettings) => {
 
-  if(!warns[wUser.id]) warns[wUser.id] = {
-    warns: 0
-  };
+ 
 
-  warns[wUser.id].warns++;
 
-  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
-    if (err) console.log(err)
-  });
+    try {
+    if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send("Sorry, but you do not have valid permissions! If you believe this is an error, contact an owner.", {
 
-  let warnEmbed = new Discord.RichEmbed()
-  .setDescription("Warns")
-  .setAuthor(message.author.username)
-  .setColor("#fc6400")
-  .addField("Warned User", `<@${wUser.id}>`)
-  .addField("Warned In", message.channel)
-  .addField("Number of Warnings", warns[wUser.id].warns)
-  .addField("Reason", reason || "no reason");
+    })
+  bot.settings.ensure(message.guild.id, dsettings);
+    const mod = message.author;
+    let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if (!args[0]) return message.channel.send('Please specify a person & reason for the warn!')
 
-  let warnchannel = message.guild.channels.find(`name`, "derp-logs");
-  if(!warnchannel) message.reply("Couldn't find `derp-logs`. No logs!");
+    let reason = message.content.split(" ").slice(2).join(" ");
+    if (!reason) return message.channel.send('Please specify a person & reason for the warn!')
 
-  warnchannel.send(warnEmbed);
+    const casenumbers = new db.table('CASENUMBERs')
+    const guildcasenumber = await casenumbers.fetch(`case_${message.guild.id}`)
+    const a = guildcasenumber
+    const b = a + 1
+    casenumbers.set(`case_${message.guild.id}`, b)
+    //  console.log(guildcasenumber)
+    const numberwarn = new db.table('WARNNUMBERs')
+    const num1 = await numberwarn.fetch(`user_${user.id}_${message.guild.id}`)
+    const y = 1
+    const m = y + num1
+    numberwarn.set(`user_${user.id}_${message.guild.id}`, m)
+    // console.log(num1)
 
-  if(warns[wUser.id].warns == 2){
-    let muterole = message.guild.roles.find(`name`, "muted");
-    if(!muterole) return message.reply("You should create `muted` role dude.");
 
-    let mutetime = "10s";
-    await(wUser.addRole(muterole.id));
-    message.channel.send(`<@${wUser.id}> has been temporarily muted`);
+    if(!guildcasenumber == Number) {
+        casenumbers.set(`case_${message.guild.id}`, 1)
+    }
 
-    setTimeout(function(){
-      wUser.removeRole(muterole.id)
-      message.reply(`<@${wUser.id}> has been unmuted.`)
-    }, ms(mutetime))
-  }
-  if(warns[wUser.id].warns == 3){
-    message.guild.member(wUser).ban(reason);
-    message.reply(`<@${wUser.id}> has been banned.`)
-  }
+    if(!num1 == Number) {
+        db.set(`user_${user.id}_${message.guild.id}`, 1)
+    }
+
+    let modlog = message.guild.channels.find("name", bot.settings.get(message.guild.id, "modLogChannel"))
+       if(!modlog) return message.channel.send("PLZ do d>setconf modLogChannel <Channel Name>. You need log right?")
+
+    
+        //user.kick({ reason: `${reason}`})
+        const userwarn = new db.table('USERWARNINGs')
+        const num2 = await numberwarn.fetch(`user_${user.id}_${message.guild.id}`)
+        const warns = await userwarn.fetch(`warn_${user.id}_${num2}_${message.guild.id}`)
+        userwarn.set(`warn_${user.id}_${num2}_${message.guild.id}`, reason)
+
+    if (user) {
+
+        if (!user) return message.channel.send("Couldn't find user.")
+      
+        if (user.hasPermission("MANAGE_ROLES_OR_PERMISSIONS")) return message.channel.send("The user you are trying to warn is either an Admin or someone who has Administration Rights")
+    
+
+        if (num2 == 3){
+            const kickEmbed = new Discord.RichEmbed()
+            .setAuthor('Warn')
+            .setDescription(`**Case Number**: ${guildcasenumber}\n\nUser <@${user.id}> Has Been Kicked Due To Recieving 3 Warnings.\n**Reason**: ${reason}`)
+            .setColor('DARK_RED')
+            .setTimestamp()
+            .setThumbnail(user.displayAvatarURL)
+            .setFooter(`Staff UID ${mod.id} | Staff User ${mod.tag}`)
+            modlog.send(kickEmbed).catch(() => message.reply("Cannot post in your mod-log! Have you set my permissions correctly?"));
+         
+        user.send(`You have been warned & kicked in ${message.guild.name}\n**Reason**: ${reason}\n\nTotal Warnings: ${num2}`) .catch(() => message.reply("Cannot Send Direct Message To "+user));
+        message.guild.member(user).kick(reason)
+        } else if (num2 >= 4) {
+            const banEmbed = new Discord.RichEmbed()
+            .setAuthor('Warn')
+            .setDescription(`**Case Number**: ${guildcasenumber}\n\nUser <@${user.id}> Has Been Banned Due To Recieving 4 Warnings.\n**Reason**: ${reason}`)
+            .setColor('DARK_RED')
+            .setTimestamp()
+            .setThumbnail(user.displayAvatarURL)
+            .setFooter(`Staff UID: ${mod.id} | Staff User: ${mod.tag}`)
+            modlog.send(banEmbed).catch(() => message.reply("Cannot post in your mod-log! Have you set my permissions correctly?"));
+          
+        numberwarn.set(`user_${user.id}_${message.guild.id}`, 0)
+        message.guild.member(user).ban(reason).catch(() => message.reply("Cannot Ban "+user+ "! Give me permissions!"));
+        } else {
+
+        const warnEmbed = new Discord.RichEmbed()
+            .setAuthor('Warn')
+            .setDescription(`**Case Number**: ${guildcasenumber}\n\nUser <@${user.id}> Has Been Warned\n**Reason**: ${reason}\n\nTotal Warnings: ${num2}`)
+            .setColor('DARK_RED')
+            .setTimestamp()
+            .setThumbnail(user.displayAvatarURL)
+            .setFooter(`Staff UID: ${mod.id} | Staff User: ${mod.tag}`)
+        modlog.send(warnEmbed).catch(() => message.reply("Cannot post in your mod-log! Have you set my permissions correctly?"));
+       
+        user.send(`You have been warned in ${message.guild.name}, Total Warnings: ${num2}\n**Reason**: ${reason}`) .catch(() => message.reply("Cannot Send Direct Message To "+user));
+        }}
+    }catch(err) {console.log(`Error with Warnings ${err}`)}
 
 }
 
@@ -58,7 +104,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.config = {
   name: "warn",
   aliases: ["warning"],
-  description: "Warn some bad boi (Finally! Justin now use glitch.com so there's now database!)",
+  description: "Warn some bad boi",
   usage: "d>warn <ppl> <reason>",
   noalias: "No Aliases",
   accessableby: "Staff"

@@ -4,9 +4,9 @@ const weather = require('weather-js');
 module.exports.run = async (bot, message, args) => {
   
     weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
-      if (err) message.channel.send(err);
+      if (err) message.channel.send("```" + err + "```");
       if (result === undefined || result.length === 0) {
-          message.channel.send('**Please enter a location!**')
+          message.channel.send('**Please enter a vaild location!**')
           return;
       }
       var current = result[0].current;

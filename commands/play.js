@@ -6,11 +6,12 @@ const yt = require("youtube-info");
 module.exports.run = async (bot, message, args, ops) => {
 
 
+
  if(message.channel.type === "dm") return message.channel.send("Sorry! But this command `play` don't work in DM!");
 
  if (!message.member.voiceChannel) return message.channel.send('Please connect to a voice channel.');
 
-    if (!args[0]) return message.channel.send('Sorry, please input a url following the command.');
+    if (!args[0]) return message.channel.send('Sorry, please put something to search');
 
     let validate = await ytdl.validateURL(args[0]);
     if (!validate) {
@@ -39,6 +40,7 @@ if(!data.connection) data.connection = await message.member.voiceChannel.join();
    url: args[0],
    announceChannel: message.channel.id
  });
+
 
 
 
